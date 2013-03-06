@@ -1,0 +1,65 @@
+
+.inside-page
+
+  .goldbar-with-shadow
+
+
+  .page-banner
+
+    .background-image
+      img src="/uploads/banner-1.jpg"
+
+    .shadow-bar
+    .shadow-bar-content
+      .container
+        .row
+          .span12
+            .banner-heading = @root_page.name
+            .rounded-bar
+
+  .container
+    .row
+
+      .span8.main
+
+        h3 = @page.name
+        p = raw(@page.extras.where(slug: 'project_blurb').first.value)
+
+        h5 Project Overview
+        p = raw(@page.extras.where(slug: 'project_overview').first.value)
+
+
+        - if @page.extras.where(slug: 'project_scope_of_work').first
+          h5 Scope of Work
+          = raw(@page.extras.where(slug: 'project_scope_of_work').first.value)
+
+        h5 Project Photos
+        .project-thumbnails.clearfix
+
+          - for image in @page.images
+            .thumbnail
+              img src="/#{image.url if image}"
+
+
+
+
+      .span4.main.project-info
+
+        h5 Client
+        p = raw(@page.extras.where(slug: 'project_client').first.value)
+
+        h5 Project Type
+        p = raw(@page.extras.where(slug: 'project_type').first.value)
+
+        h5 Year of Completion
+        p = raw(@page.extras.where(slug: 'project_year_of_completion').first.value)
+
+        h5 Project Location
+        p = raw(@page.extras.where(slug: 'project_location').first.value)
+
+
+
+.goldbar
+
+
+

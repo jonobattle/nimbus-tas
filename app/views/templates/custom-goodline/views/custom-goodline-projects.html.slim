@@ -1,0 +1,53 @@
+
+.inside-page
+
+  .goldbar-with-shadow
+
+
+  .page-banner
+
+    .background-image
+      img src="/uploads/banner-1.jpg"
+
+    .shadow-bar
+    .shadow-bar-content
+      .container
+        .row
+          .span12
+            .banner-heading = @page.name
+            .rounded-bar
+
+  .container
+
+    /Grab the project types from the page extras
+    .row
+      .span12.categories
+
+        - @categories = ["All"]
+        - for page in @page.pages
+          - @categories << page.extras.where(slug: "project_type").first.value
+        - @categories.uniq!
+
+        - for category in @categories
+          a.category = category
+
+
+    .row.goodline-projects
+
+      - for page in @page.pages
+
+        a.span4.goodline-projects-project href="#{@page.slug + "/" + page.slug}"
+          .photo
+            img src="#{page.images.first().url if page.images.size > 0}"
+
+          .caption-shadow
+          .caption
+             = page.name
+          .type
+            = page.extras.where(slug: "project_type").first.value
+
+
+.goldbar
+
+
+

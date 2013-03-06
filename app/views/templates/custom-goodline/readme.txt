@@ -1,0 +1,1 @@
+The Goodline template is a template especially designed for the Goodline website.

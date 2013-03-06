@@ -1,0 +1,107 @@
+doctype html
+html
+  head
+    title Toowoomba Art Society
+
+    = stylesheet_link_tag href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two'
+    = stylesheet_link_tag    "templates/custom-tas/application", :media => "all"
+    = javascript_include_tag "templates/custom-tas/application"
+    = csrf_meta_tags
+
+  body.local
+
+    .container
+      .row
+        .brand.span12
+          .banner Toowoomba Art Society<span class='dot'>.</span>
+
+    .container.navbar-wrapper
+      .navbar
+        .navbar-inner
+          .container
+            a.btn.btn-navbar data-toggle="collapse" data-target=".nav-collapse"
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+            .nav-collapse.collapse
+              ul.nav id="navigation"
+
+                li
+                  a href="/" Home
+
+                li.dropdown id="drop-about"
+                  a.dropdown-toggle data-toggle="dropdown" href="/about-us/history-of-tas" About Us
+                  ul.dropdown-menu
+                    li
+                      a href="/about-us/history" History of TAS
+                    li
+                      a href="/about-us/committee-members" Committee Members
+                    li
+                      a href="/about-us/hours-of-opening" Hours of Opening
+                    li
+                      a href="/about-us/annual-subscription-rates" Annual Subscription Rates
+
+                li.dropdown id="drop-exhibitions"
+                  a.dropdown-toggle data-toggle="dropdown" href="/exhibitions/current" Exhibitions
+                  ul.dropdown-menu
+                    li
+                      a href="/exhibitions/current" Current
+                    li
+                      a href="/exhibitions/upcoming" Upcoming
+                    li
+                      a href="/exhibitions/past" Past
+                    li
+                      a href="/exhibitions/information" Information
+
+
+                li.dropdown id="drop-news"
+                  a.dropdown-toggle data-toggle="dropdown" href="/news" News
+                  ul.dropdown-menu
+                    li
+                      a href="/news/monthly-newsletter" Monthly Newsletter
+                    li
+                      a href="/news/current-news" Current News
+                    li
+                      a href="/news/special-events" Special Events
+
+
+                li.dropdown id="drop-activities"
+                  a.dropdown-toggle data-toggle="dropdown" href="/weekly-activities/weekly-schedule" Weekly Activities
+                  ul.dropdown-menu
+                    li
+                      a href="/weekly-activities/weekly-schedule" Weekly Schedule
+                    li
+                      a href="/weekly-activities/printmakers-schedule" Printmakers Schedule
+
+
+                li
+                  a href="/artists-gallery" Artists Gallery
+
+                li.dropdown id="drop-childrens-art"
+                  a.dropdown-toggle data-toggle="dropdown" href="/childrens-art/gallery" Children's Art
+                  ul.dropdown-menu
+                    li
+                      a href="/childrens-art/gallery" Gallery
+                    li
+                      a href="/childrens-art/activities-schedule" Activities Schedule
+
+                li
+                  a href="/contact-us" Contact Us
+
+    = yield
+
+    /.footer-addresses
+    /  .container
+    /    .row
+    /      .span12
+    /
+    /
+    /.footer
+    /  .container
+    /    .row
+    /      .span3
+    /        .footer-logo
+    /
+
+

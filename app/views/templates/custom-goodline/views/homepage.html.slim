@@ -1,0 +1,99 @@
+
+
+.goldbar-with-shadow
+
+.homepage-fader
+  .homepage-fader-inner
+
+    .item
+
+      .background-image
+        img src="/uploads/banner-1.jpg"
+
+      .shadow-bar
+      .shadow-bar-content
+        .container
+          .row
+            .span12
+              .banner-heading Ongoing Maintenance
+              .banner-subheading Reliable and responsive to all your maintenance needs
+              .rounded-bar
+
+    .item
+
+      .background-image
+        img src="/uploads/banner-2.jpg"
+
+      .shadow-bar
+      .shadow-bar-content
+        .container
+          .row
+            .span12
+              .banner-heading Deconstruction
+              .banner-subheading Without the hazards
+              .rounded-bar
+
+
+.homepage-feature
+  .container
+    .row
+
+      .span4
+        .feature-heading.services Services
+        .feature-content
+          | Our key areas of specialisation include steel fabrication, steel erections, demolitions, scaffolding, plumbing, plastic welding, civil carpentry and electrical data communications, With a diverse range of services on offer from project conception through to project management and ongoing maintenance.
+
+          br
+          a href="/services/modular-movements" Learn more about our services
+
+      .span4
+        .feature-heading.careers Careers
+        .feature-content
+          img src="/uploads/smileguy.jpg"
+
+          | Find out what life is like working at Goodline.
+          br
+          a href="/careers" Working with Goodline
+
+
+      .span4
+        .feature-heading.projects Projects
+        .feature-content
+          | Our project portfolio has been delivered for a range of clients, including global mining and manufacturing companies, local indigenous communities and federal/state government departments. Our skilled teams and diverse portfolio of equipment enable us to tackle any project and deliver results on time, on budget and at the highest quality.
+
+          br
+          a href="/projects" Learn more about our projects
+
+
+
+.homepage-infocus
+
+  .container
+
+    - projects = @site.pages.where(:slug => 'projects').first
+
+    - for project in projects.pages
+      .row
+
+        .arrow-left
+        .arrow-right
+
+        .span4
+          .infocus-heading Goodline In focus
+          .infocus-name = truncate(project.name, :ommision => "...", :length => 60)
+          .infocus-content = truncate(raw(project.extras.where(slug: 'project_blurb').first.value), :ommision => ' ...', :length => 300)
+
+          .infocus-link-container
+            a href="/projects/#{project.slug}" Read More
+
+        .span8
+          .infocus-image
+            img src="#{project.images.first().url if project.images.size > 0}"
+
+
+
+
+
+
+
+

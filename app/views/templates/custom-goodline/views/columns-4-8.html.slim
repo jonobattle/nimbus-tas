@@ -1,0 +1,37 @@
+
+.inside-page
+
+  .goldbar-with-shadow
+
+
+  .page-banner
+
+    .background-image
+      img src="/uploads/banner-1.jpg"
+      img src="/uploads/banner-2.jpg"
+
+
+    .shadow-bar
+    .shadow-bar-content
+      .container
+        .row
+          .span12
+            .banner-heading = @page.name
+            .rounded-bar
+
+  .container
+    .row
+
+      .span8.main
+        = raw(@page.body)
+
+      .span4.goodline-side-menu.pull-right
+        - for page in @root_page.pages
+          a.goodline-side-menu-item href="#{ page.slug }" = page.name
+
+
+
+.goldbar
+
+
+

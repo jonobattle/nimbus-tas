@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  slug: MyString
+  template: MyString
+  rank: 
+  is_enabled: false
+
+two:
+  name: MyString
+  slug: MyString
+  template: MyString
+  rank: 
+  is_enabled: false

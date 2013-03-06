@@ -1,0 +1,43 @@
+.container.homepage-fader
+  .row.homepage-fader-inner
+
+    .item
+      .background-image
+        img src="/uploads/page-banners/carnival-banner-2.jpg"
+
+    .item
+      .background-image
+        img src="/uploads/page-banners/carnival-banner.jpg"
+
+
+.homepage-feature-wrapper
+  .container
+    .row
+      .span4.homepage-feature
+        .feature-heading News & Events
+        .feature-content
+          - news = @site.pages.where(:slug => 'news').first
+          - news_and_events = news.pages.where(:slug => 'current-news').first
+          - for item in news_and_events.pages
+
+            a.item.clearfix href="#{ news.slug + "/" + news_and_events.slug + "/" + item.slug }"
+
+              .img-wrapper
+                img src=""
+              = item.name
+              .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+
+
+      .span4.homepage-feature
+        .feature-heading Exhibitions
+
+      .span4.homepage-feature
+        .feature-heading Activities
+
+
+
+/.homepage-middle
+/  .container
+/    .row
+/      .span12
+

@@ -1,0 +1,775 @@
+
+$goodline-blue: #214658;
+$goodline-gold: #feba00;
+$goodline-grey: #e3e3e3;
+
+
+// All styles need to fall inside the 'local' selection so they don't interfere
+// or get interfered with by the admin styles
+
+.local {
+
+
+  // NAVBAR ************************************
+
+  .navbar {
+    background-color: #fff;
+    height: 110px;
+    margin: 40px auto 0;
+
+    .navbar-inner {
+      background-color: #fff;
+      background-image: none;
+      background-repeat: no-repeat;
+      filter: none;
+      border: none;
+      box-shadow: none;
+
+      ul.nav {
+
+        margin-top: 20px;
+
+        li.dropdown:hover > ul.dropdown-menu{
+          display: block;
+        }
+
+
+        li {
+
+          a {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-shadow: none;
+            line-height: 15px;
+          }
+
+          .active {
+            a {
+              color: $goodline-gold;
+              background-color: #fff;
+              box-shadow: none;
+            }
+          }
+
+        }
+
+      }
+
+      .brand {
+        background: url("Goodline.png") top left no-repeat;
+        padding-right: 0;
+        height: 67px;
+        width: 232px;
+        overflow: visible;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+
+      // DROPDOWN MENU
+
+      .dropdown-menu:after, .dropdown-menu:before {
+        content: none !important;
+        left:  0;
+      }
+
+      .dropdown-menu {
+        left: 0;
+        margin-top: -1px;
+        background-color: $goodline-gold;
+        border-radius: 0;
+        padding: 0px 0px 0px 10px;
+        border: 1px solid $goodline-gold;
+
+        a {
+          padding:  10px;
+          background-color: #fff;
+          text-transform: none !important;
+
+          &:hover {
+            background-color: lighten($goodline-gold, 40%) !important;
+            background-image: none;
+            color: #333 !important;
+          }
+        }
+      }
+
+
+    }
+
+  }
+
+
+
+  // BREADCRUMBS ******************************
+
+  .breadcrumbs {
+    box-shadow: inset 0px 2px 5px darken($goodline-gold, 10%);
+    background-color: $goodline-gold;
+
+    .heading {
+      padding: 15px 0;
+      margin: 0;
+      text-transform: none;
+      color: #fff;
+      font-weight: normal;
+      font-size: 24px;
+    }
+
+  }
+
+  .page-banner {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+
+    .background-image {
+      position: absolute;
+      bottom: 0;
+      min-width: 1250px;
+      height: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .shadow-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 130px;
+      width: 100%;
+      background-color: #000;
+      opacity: 0.4;
+    }
+
+    .shadow-bar-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 130px;
+      width: 100%;
+
+
+      .banner-heading {
+        padding: 15px 0;
+        font-size: 60px;
+        margin-top: 20px;
+        font-weight: bold;
+        color: $goodline-gold;
+        border: none;
+        text-shadow: 3px 3px 20px #333;
+      }
+    }
+
+    .rounded-bar {
+      position: absolute;
+      bottom: -25px;
+      width: inherit;
+      background-color: #fff;
+      height: 40px;
+      padding: 10px 40px;
+      margin-left: -40px;
+      border-radius: 50px 50px 0 0;
+    }
+  }
+
+  .goldbar-with-shadow {
+    height:30px;
+    background-color:#feba00;
+    border-top:1px solid #fff;
+    box-shadow:inset 0px 2px 5px #cb9500
+  }
+
+
+  .goldbar {
+    height:10px;
+    background-color:#feba00;
+    border-top:1px solid #fff;
+  }
+
+
+  // FADER
+  .homepage-fader {
+    background: #f7f7f7;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+
+    .item {
+      top:  400px;
+      position: relative;
+    }
+
+    .background-image {
+      position: absolute;
+      bottom: 0;
+      min-width: 1250px;
+      height: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .shadow-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 170px;
+      width: 100%;
+      background-color: #000;
+      opacity: 0.4;
+
+    }
+
+    .shadow-bar-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 170px;
+      width: 100%;
+
+
+      .banner-heading {
+        padding: 15px 0;
+        font-size: 60px;
+        margin-top: 20px;
+        font-weight: bold;
+        color: $goodline-gold;
+        border: none;
+        text-shadow: 3px 3px 20px #333;
+      }
+
+      .banner-subheading {
+        font-size: 26px;
+        font-weight: 200;
+        color: #fff;
+        text-shadow: 3px 3px 20px #333;
+        padding: 20px 0 0 0;
+      }
+
+      .rounded-bar {
+        position: absolute;
+        bottom: -25px;
+        width: inherit;
+        background-color: #fff;
+        height: 40px;
+        padding: 10px 40px;
+        margin-left: -40px;
+        border-radius: 50px 50px 0 0;
+      }
+
+    }
+
+
+  }
+
+
+
+
+  // FEATURES
+
+  .homepage-feature {
+    background: url("grey-gradient.png") bottom left repeat-x;
+    padding-bottom: 40px;
+
+
+    .feature-heading {
+      font-size: 26px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $goodline-blue;
+      padding: 5px 0 30px 40px;
+
+      &.services {
+        background:  url("cog.png") top left no-repeat;
+        background-size: 30px 30px;
+      }
+
+      &.careers {
+        background:  url("careers.png") top left no-repeat;
+        background-size: 30px 30px;
+      }
+
+      &.projects {
+        background:  url("projects.png") top left no-repeat;
+        background-size: 30px 30px;
+      }
+
+    }
+
+    .feature-content {
+      line-height: 1.7;
+
+      img {
+        padding: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+
+      a {
+        background: url("yellow-arrow.png") center right no-repeat;
+        padding-right: 25px;
+        font-weight: bold;
+        color: #333;
+        line-height: 40px;
+      }
+    }
+
+  }
+
+
+
+  // INFOCUS
+
+  .homepage-infocus {
+    padding-bottom: 30px;
+    background:  url("yellow-gradient.png") bottom left repeat-x;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    height: 400px;
+
+    .row {
+      position: absolute;
+      display: none;
+
+
+
+      .arrow-left {
+        top: 170px;
+        left: -60px;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-right: 50px solid white;
+        opacity: 0.5;
+
+        &.hover {
+          opacity: 1.0;
+          cursor: pointer;
+        }
+      }
+
+      .arrow-right {
+        position: absolute;
+        right: -50px;
+        top: 170px;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-left: 50px solid white;
+        opacity: 0.5;
+
+        &.hover {
+          opacity: 1.0;
+          cursor: pointer;
+        }
+      }
+
+
+      .infocus-heading {
+        background: url("mag-glass.png") center left no-repeat;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 30px 10px 30px 36px;
+        font-size: 24px;
+        border-bottom: 1px solid lighten($goodline-gold, 20);
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      .infocus-name {
+        color: darken($goodline-gold, 35%);
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+
+      .infocus-content {
+        color: darken($goodline-gold, 25%);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .infocus-link-container {
+        clear: both;
+        margin-top: 20px;
+        line-height: 48px;
+        padding-right: 20px;
+        background: lighten($goodline-gold, 40%);
+        float: left;
+
+        a {
+          padding: 10px 20px;
+          text-transform: uppercase;
+          background: url("yellow-arrow.png") center right no-repeat;
+          color: darken($goodline-gold, 25%);
+          font-size: 16px;
+        }
+      }
+
+      .infocus-image {
+
+        border: 4px solid #fff;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 5px 5px 5px darken($goodline-gold, 10);
+        width: 550px;
+        max-height: 360px;
+        overflow: hidden;
+        margin: 30px auto 0;
+
+        img {
+          margin: 0;
+          padding: 0;
+
+        }
+      }
+
+    }
+
+  }
+
+
+
+  // FOOTER ADDRESSES
+
+  .footer-addresses {
+    padding: 40px 0;
+    background-color: #303030;
+    border-bottom: 1px solid #000;
+    color: #999;
+
+    .address-title {
+      margin-top: 0;
+      padding-top: 0;
+      margin-bottom: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #fafafa;
+      font-weight: bold;
+    }
+
+    .address-postal {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      background: url("house-icon.png") top left no-repeat;
+      background-size: 18px 16px;
+    }
+
+    .address-phone {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      background: url("phone-icon.png") top left no-repeat;
+      background-size: 18px 16px;
+    }
+
+    .address-fax {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      background: url("fax-icon.png") top left no-repeat;
+      background-size: 18px 16px;
+    }
+
+  }
+
+
+
+  // FOOTER
+
+  .footer {
+    padding: 50px 0 50px 0;
+    background-color: #242424;
+
+    .footer-logo {
+      background: url("footer-logo.png") top left no-repeat;
+      width: 173px;
+      height: 32px;
+    }
+
+    .linkedin {
+      background: url("linkedin.png") top left no-repeat;
+      width: 30px;
+      height: 30px;
+    }
+
+    .copyright {
+      line-height: 20px;
+      color: #fff;
+      margin-left: 20px;
+    }
+
+  }
+
+
+
+  // TEMPLATES ************************************
+
+  // COLUMNS-4-8 **********************************
+
+
+  .goodline-side-menu {
+
+    margin-top: 15px;
+
+    .goodline-side-menu-item {
+      float: right;
+      display: block;
+      width: 80%;
+      line-height: 50px;
+      padding-left: 20px;
+      color: #555;
+      background-color: #f7f7f7;
+      margin-bottom: 1px;
+      font-weight: bold;
+      border-left: 5px solid $goodline-gold;
+
+      &:hover, &.active {
+        background-color: lighten($goodline-gold, 35%);
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+    }
+
+
+  }
+
+
+  .inside-page {
+    background: url("grey-gradient.png") bottom left repeat-x;
+    padding-bottom: 100px;
+  }
+
+  .project-info {
+    text-align: right;
+    margin-top: 14px;
+  }
+
+
+  .main {
+    padding-top: 0 !important;
+    padding-bottom: 100px;
+    min-height: 500px;
+    color: #333;
+
+    h2 {
+      font-weight: 200;
+      border-bottom: 1px solid #ddd;
+      font-size: 20px;
+      display: block !important;
+      padding: 0;
+      margin: 0;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+
+    }
+
+    h3 {
+      font-weight: 200;
+      padding-top: 10px;
+      border-bottom: 1px solid $goodline-gold;
+      padding-bottom: 5px;
+    }
+
+    h5 {
+      padding: 10px 0 5px;
+      color: #333;
+      font-size: 14px;
+      border-bottom: 1px dotted $goodline-gold;
+      margin-top: 15px;
+
+    }
+
+    p {
+      line-height: 1.6;
+
+      .inline-list {
+
+        .inline-list-item {
+          background-color: #f7f7f7;
+          height: 25px;
+          line-height: 25px;
+          padding:  5px 10px;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          display: block;
+          float: left;
+
+          &.hover {
+            background-color: lighten($goodline-gold, 35%);
+          }
+        }
+      }
+    }
+
+    ul {
+      padding-bottom: 20px;
+    }
+
+    iframe {
+      outline: none;
+      border: 1px solid #ccc;
+    }
+
+    form {
+      margin-top: 20px;
+      border-radius: 10px;
+      background-color: #f7f7f7;
+      padding:  20px 50px 20px 20px;
+
+      .control-label {
+        width:  70px;
+        font-weight: bold;
+      }
+
+      input {
+        font-size: 16px;
+        width: 540px;
+        padding: 15px;
+      }
+
+      button {
+        padding: 10px;
+      }
+
+      textarea {
+        width: 540px;
+        padding: 15px;
+        min-height: 200px;
+      }
+
+      small {
+        a {
+          color: #555;
+        }
+      }
+    }
+
+
+
+    .project-thumbnails {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      overflow: visible;
+      display: block;
+
+      .thumbnail {
+        overflow: hidden;
+        height: 100px;
+        width: 185px;
+        padding: 0;
+        float: left;
+        margin: 0 15px 15px 0;
+
+        img {
+
+        }
+      }
+    }
+
+  }
+
+
+  // GOODLINE PROJECTS
+
+
+  .categories {
+    margin-bottom: 20px;
+
+    .category {
+      padding: 0 0 5px;
+      margin: 0 20px 25px 0px;
+      color: #555;
+      text-shadow: 1px 1px 2px #ddd;
+      font-weight: bold;
+      font-size: 16px;
+      border-bottom: 2px solid #ccc;
+
+      &.active, &:hover {
+        border-bottom: 2px solid $goodline-gold;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+
+
+  .goodline-projects {
+
+    position: relative;
+    margin-top: 10px;
+
+    .goodline-projects-project {
+      margin-bottom: 20px;
+      position: absolute;
+      overflow: hidden;
+
+      .photo {
+        background-color: #eee;
+        height: 350px;
+        width: 298px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+
+
+        img {
+          min-height: 300px;
+        }
+      }
+
+
+      .caption-shadow {
+        height: 115px;
+        background: url("grey-gradient.png") center left repeat-x;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 298px;
+        z-index: 10;
+        border: 1px solid #ccc;
+        border-top: 2px solid $goodline-gold;
+      }
+
+      .caption {
+        z-index: 20;
+        bottom: 30px;
+        left: 0;
+        position: absolute;
+        margin: 0 10px 10px;
+        color: #333;
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      .type {
+        z-index: 30;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background-color: $goodline-gold;
+        color: #fff;
+        padding: 5px 10px;
+        width: 298px;
+        border: 1px solid darken($goodline-gold, 10%);
+      }
+
+      &:hover {
+        background-color: #fff;
+        box-shadow: 0px 0px 10px $goodline-gold;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+
+  // GOODLINE PROJECT
+
+
+}

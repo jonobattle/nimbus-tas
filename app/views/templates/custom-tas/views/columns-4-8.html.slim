@@ -1,0 +1,18 @@
+
+.inside-page
+
+  .container
+    .row
+
+      .span8.main
+
+        h2 = @page.name
+        = raw(@page.body)
+
+      /.span4.side-menu.pull-right
+      /  - for page in @root_page.pages
+      /    a.side-menu-item href="#{ page.slug }" = page.name
+
+
+
+

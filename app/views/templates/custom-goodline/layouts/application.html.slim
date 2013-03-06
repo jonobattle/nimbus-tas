@@ -1,0 +1,124 @@
+doctype html
+html
+  head
+    title Goodline Pty Ltd
+    = stylesheet_link_tag    "templates/Goodline/application", :media => "all"
+    = javascript_include_tag "templates/Goodline/application"
+    = csrf_meta_tags
+
+  body.local
+
+    .container.navbar-wrapper
+      .navbar
+        .navbar-inner
+          .container
+            a.brand href="/"
+             a.btn.btn-navbar data-toggle="collapse" data-target=".nav-collapse"
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+
+            .nav-collapse.collapse
+              ul.nav.pull-right id="navigation"
+                li.dropdown id="drop-about"
+                  a.dropdown-toggle data-toggle="dropdown" href="/about/goodline" About
+                  ul.dropdown-menu
+                    li
+                      a href="/about/goodline" About Goodline
+                    li
+                      a href="/about/mission-and-values" Mission & Values
+                    li
+                      a href="/about/management-team" Management Team
+
+                li.dropdown id="drop-services"
+                  a.dropdown-toggle data-toggle="dropdown" href="/services/modular-movements" Services
+                  ul.dropdown-menu
+                    li
+                      a href="/services/modular-movements" Modular Movements
+                    li
+                      a href="/services/civil" Civil
+                    li
+                      a href="/services/electrical" Electrical
+                    li
+                      a href="/services/fabrication" Fabrication
+                    li
+                      a href="/services/plumbing" Plumbing
+                    /li
+                    /  a href="/services/treated-waste" Treated Waste
+                    li
+                      a href="/services/vehicle-maintenance" Vehicle Maintenance
+
+
+                li.dropdown id="drop-sustainability"
+                  a.dropdown-toggle data-toggle="dropdown" href="/sustainability/health-and-safety" Sustainability
+                  ul.dropdown-menu
+                    li
+                      a href="/sustainability/health-and-safety" Health & Safety
+                    li
+                      a href="/sustainability/quality-assurance" Quality Assurance
+                    li
+                      a href="/sustainability/environment" Environment
+                    li
+                      a href="/sustainability/community" Community
+                    li
+                      a href="/sustainability/awards" Awards
+                    li
+                      a href="/sustainability/training" Training
+
+                li
+                  a href="/projects" Projects
+                li
+                  a href="/careers" Careers
+
+                li.dropdown id="drop-contact"
+                  a.dropdown-toggle data-toggle="dropdown" href="/contact/corporate-contacts" Contact
+                  ul.dropdown-menu
+                    li
+                      a href="/contact/corporate-contacts" Corporate Contacts
+                    li
+                      a href="/contact/our-offices" Our Offices
+                    li
+                      a href="/contact/us" Offices & Online
+
+
+    = yield
+
+    .footer-addresses
+      .container
+        .row
+
+          .span3
+            .address-title Head Office
+            .address-postal Level 2, 2 Innovation Way<br/>Kawana Waters QLD 4575
+            .address-phone (07) 5413 5400
+            .address-fax (07) 5438 8972
+
+          .span3
+            .address-title Weipa
+            .address-postal 30 Iraci Avenue<br/>Weipa QLD 4874
+            .address-phone (07) 4090 6500
+            .address-fax (07) 40697686
+
+          .span3
+            .address-title Port Hedland
+            .address-postal 6 Murrena Street<br/>Wedgefield WA 6721
+            .address-phone (08) 9160 2600
+            .address-fax (08) 9172 5944
+
+          .span3
+            .address-title Darwin
+            .address-postal 35 Lilwall Road<br/>East Arm NT 0822
+            .address-phone (08) 8944 5000
+            .address-fax (08) 8947 4636
+
+
+    .footer
+      .container
+        .row
+          .span3
+            .footer-logo
+
+          .span3.pull-right
+            .copyright &copy; Goodline
+
+
