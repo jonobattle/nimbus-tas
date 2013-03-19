@@ -9,30 +9,223 @@
 
 Site.create(name: "Toowoomba Art Society", pages: [
     Page.new(name: "About Us", slug: "about-us", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: false, pages: [
-        Page.new(name: "History of the Toowoomba Art Society", slug: "history", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
+        Page.new(name: "History of the Toowoomba Art Society", slug: "history", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "
+            <h3>Early days of the Toowoomba Art Society</h3><p>Sometime before November 1925 a group of women had met and discussed the idea of forming an Art Club.  The Art Club membership changed continually, it seems, with people's work demanding they travel or, especially for the women, marriages.  The women gathered at Miss Aebi's studio were the wives of businessmen, a doctor and single women like Miss Aebi, who taught piano or worked in other businesses.  No doubt a few were older, single women who were heavily involved in the community through Red Cross, the Country Women's Association and their church. But younger women were involved from the beginning.  
+            The first meeting of the Toowoomba Art Club, held at Miss Aebi's Studio in Russell Street was attended by - Mrs Brown, Mrs James, Mrs Oehlman and Miss Aebi.  Excused were Mrs D Horn, Mrs Leamon and Misses A and M Stewart.
+            At the former meeting in the presence of Miss Aebi, Mrs Brown, Mrs D Horn, Miss E Jones, the Misses Ethel and Eileen Priest, M and A Stewart, Miss Warren the subject of forming an Art Club in Toowoomba was the subject of discussion, and Miss Aebi was charged with convoking, on a convenient date, another meeting at which the matter would be further discussed.</p>
+            <p>The meeting,  Miss Aebi in the Chair, thought it necessary to proceed with the election of a preliminary committee, consisting of a president, vice-president, hon. Secretary, treasurer and hon. Instructor with the task to organise the project.  Of those present only Miss Aebi and Mrs James were ready to take office; the former accepting the temporary charge of hon. Instructor, and the latter of temporary president.   The meeting decided to ask Miss Eileen Priest to accept the charge of temporary secretary, Miss E Jones as treasurer pro-tem & A Stewart as temp. vice-president.  Miss Aebi offered her studio free of charge for the purpose of the club; an offer which was accepted in an amended form, to the effect that the club would defray the cost of lighting, hiring of chairs, & other incidental expenses connected with the meetings.  It was further agreed to ask a prominent  Toowoomba gentleman to accept the position of Patron of the Club, with a view to obtain his advice with regards to exhibitions and other matters of public interest.  Miss Aebi communicated the following names as prospective Club members:- Miss Aebi; Mrs Brown; Mrs Horn; Mrs James; Miss Jones; Miss Kanowski; Miss McCulloch; Mrs Leamon; Mrs Oehlman; Misses Ethel & EileenPriest. Misses A & M Stewart; Miss Warren; Miss Turner; Master W Dickson and Jim Jordan, and proposed that Mr and Mrs Lister should be invited to join.</p>
+            <p>It was proposed and carried unanimously that a draft of rules, discussed at the first meeting and given by Miss Priest should be typed and amended and submitted to each of the prospective members to peruse, and, if so disposed, to make amendments which should be finally discussed & to witness their consent to become foundation members.  The draft should be signed by prospective members, and then returned to one of the temporary committee members.</p>
+            <p>The question of deferring the foundation of the club until after the New Year was then raised and discussed, and it was decided to proceed without delay, so that the New Year should see the Club organised for work.  To this end it was proposed to call a meeting for Wednesday, November 11th, when all those who intended to become foundation members should appear to finally arrange the organisation of the club, by accepting the rules drafted in their amended form.  After this date the distinction of becoming a foundation member should be withdrawn and new members would be registered as active members on paying an entrance of 5/- beside the annual fee.  Such members admission should be made by open ballot in the next meeting of the club.</p>
+            "),
         Page.new(name: "Committee Members", slug: "committee-members", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
         Page.new(name: "Hours of Opening", slug: "hours-of-opening", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
         Page.new(name: "Annual Subscription Rates", slug: "annual-subscription-rates", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true)
     ]),
-    Page.new(name: "Exhibitions", slug: "exhibitions", template: "columns-4-8", rank: 400, is_enabled: true, is_navigable: false, pages: [
-        Page.new(name: "Current", slug: "current", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Upcoming", slug: "upcoming", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Past", slug: "past", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Information", slug: "information", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
+    Page.new(name: "Exhibitions", slug: "exhibitions", template: "exhibition-columns-12", rank: 400, is_enabled: true, is_navigable: false, pages: [
+
+        # Page.new(name: "Information", slug: "information", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
+
+        Page.new(name: "Youth Exhibition", slug: "youth-exhibition", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "CA vibrant and exciting exhibition of paintings, drawings and sculptures by the primary and secondary school students who have attended Saturday and after school classes during the year.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "An exhibition of work by the children and youth who attended classes during the year."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Young members of TAS"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-11-18"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-12-07"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-11-23"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "10:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/news/gallery.jpg"),
+        ]),        
+
+        Page.new(name: "People, Places, Funny Faces", slug: "people-places-funny-faces", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A light-hearted visual commentary on life, people and places - sometimes real, somewhat abstracted, but entirely imagined.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "A light-hearted visual commentary on life, people and places - sometimes real, somewhat abstracted, but entirely imagined."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Teresa Mundt"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-07-22"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-08-17"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-07-27"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "14:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/Tree.jpg"),
+        ]),   
+
+
+
+        Page.new(name: "The Spaces In Between", slug: "the-spaces-in-between", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Three very accomplished artists from Tenterfield and Stanthorpe interpreting the one concept in very different ways in drawings, paintings, sculptures, textiles and mixed media.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Feature artist in our corridor space is Joan Kennedy."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Margaret Oban Dowe, Maggie Brockie and Sue Jurd"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-02-25"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-03-23"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-02-25"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "10:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/Maggie_possum.bmp"),
+        ]),   
+
+        Page.new(name: "Monday All Sorts", slug: "monday-all-sorts", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Works by the Monday Art in Bark Group using bark and various other mediums.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Works by the Monday Art in Bark Group using bark and various other mediums."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Art In Bark Group"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-06-24"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-07-20"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-06-29"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "14:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/news/gallery.jpg"),
+        ]),   
+
+        Page.new(name: "The Big Leap", slug: "the-big-leap", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Two artists who have very different approaches to making art but who share the enthusiasm, fun and joy that the 'doing' provides", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Two artists who have very different approaches to making art but who share the enthusiasm, fun and joy that the 'doing' provides."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Sabine Kehoe and Janice Gleeson"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-03-25"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-04-20"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-04-01"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "14:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/news/gallery.jpg"),
+        ]),   
+
+        Page.new(name: "Paint and Spatter", slug: "oil-water", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould. A Japanese pictorial from Roslyn's trip to Japan and a kaleidoscope of images from Marie-Therese's artistic ideas.Monday-Sunday 10am-2pm, Thursday 10am-1pm, Admission is free", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould"),
+            Extra.new(name: "By", slug: "by", type: "string", value: "The Tuesday 'Paint and Spatter' group"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-10-21"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-11-16"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2012-10-16"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "14:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/news/gallery.jpg"),
+        ]),        
+
+        Page.new(name: "Annual Toowoomba Art Society Members Exhibition", slug: "annual-toowoomba-art-society-members-exhibition-in-conjunction-with-the-carnival-of-flowers", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Held in conjunction with the Carnival of Flowers, the exhibition comprises selected works by TAS members and incorporates the judging of the Fred Gardiner Award for Best Picture and the People's Choice Award", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Held in conjunction with the Carnival of Flowers, the exhibition comprises selected works by TAS members and incorporates the judging of the Fred Gardiner Award for Best Picture and the People's Choice Award"),
+            Extra.new(name: "By", slug: "by", type: "string", value: "TAS Members"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-09-16"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-10-19"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-09-20"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "18:30:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/2012_prizewinner.jpg"),
+        ]),        
+
+        Page.new(name: "Drawn From Life", slug: "drawing-from-life", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Works on paper by members of the Monday and Thursday Life Drawing classes. The artists have a range of drawing experience and works are in a variety of mediums.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Works on paper by members of the Monday and Thursday Life Drawing classes. The artists have a range of drawing experience and works are in a variety of mediums."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Life Drawing Classes"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-04-22"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-05-18"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-04-26"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "18:30:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/Reclining_nude_from__Life_in_the_Raw__2012.jpg"),
+        ]),        
+
+        Page.new(name: "Australia - Fond Memories", slug: "australia-fond-memories", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Vibrant, living, colourful images reflect the memories, thoughts and emotions of the two artists' Australian upbringing.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Vibrant, living, colourful images reflect the memories, thoughts and emotions of the two artists' Australian upbringing."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Denise Nys and Kevin Burns"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-08-19"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-09-14"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-08-24"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "18:30:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/My_Beach.jpg"),
+        ]),        
+
+        Page.new(name: "Printmakers Workshop", slug: "printmakers-workshop", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "NEXT PRINT WORKSHOP ... Fri and Sat Nov 2nd and 3rd ... approx 10am to 2 pm. Held in Studio 1 ... 'HOW TO MONOTYPE PRINT' using Watercolours. There will be a demonstration showing what materials to use and how to use them. Students will learn all of the techniques and also how to use the printing press. For more information and what to bring along, please phone Sandra on 0412 438 696.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "HOW TO MONOTYPE PRINT using Watercolours."),
+            Extra.new(name: "By", slug: "by", type: "string", value: ""),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2012-11-02"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2012-11-03"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2012-11-02"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "10:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/SANY0202.JPG"),
+        ]),        
+
+        Page.new(name: "Oil & Water", slug: "oil-water", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould. A Japanese pictorial from Roslyn's trip to Japan and a kaleidoscope of images from Marie-Therese's artistic ideas.Monday-Sunday 10am-2pm, Thursday 10am-1pm, Admission is free", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould"),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Roslyn Cranch and Marie-Therese Gould"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2012-10-16"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2012-11-18"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2012-10-16"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "10:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/SANY0002.JPG"),
+        ]),        
+
+
+        Page.new(name: "Corridor Exhibition", slug: "corridor-exhibition", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Artist's statement: I was born and educated in Toowoomba and have lived here most of my adult life except from 1978 to 1989 when my husband and family moved to Rockhampton for work commitments and our children went to school there. My earliest ambition was to be a commercial artist but unfortunately studies were not readily available - and so I was mostly self taught. I have always loved and been interested in sketching and painting but up until about 10 years ago, I had done nothing about it. Since then I have attended various courses and classes and tried to learn as much as I can. I like to try different mediums, and although I have no pencil sketches here, find that charcoal and pencil are what I like to use best.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Feature artist in our corridor space is Joan Kennedy."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Joan Kennedy"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2012-11-20"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2012-12-08"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2012-12-07"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "09:18:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/SANY0055-001.JPG"),
+        ]),   
+
+
+        Page.new(name: "Tubular Variations", slug: "tubular-variations", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A solo exhibition of works on paper in watercolour, acrylic and ink.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Feature artist in our corridor space is Joan Kennedy."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Michael Cook"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-01-28"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-02-23"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-01-28"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "10:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/Tube_1.bmp"),
+        ]),   
 
     ]),
     Page.new(name: "News", slug: "news", template: "columns-4-8", rank: 300, is_enabled: true, is_navigable: false, pages: [
         Page.new(name: "Monthly Newsletter", slug: "monthly-newsletter", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
         Page.new(name: "Current News", slug: "current-news", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true, pages: [
-            Page.new(name: "First News Item", slug: "first-news-item", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true, extras: [
-                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Here is a quick blurb to describe the news item"),
+            Page.new(name: "Nancy Culliford and Patrons' Choice Awards", slug: "nancy-culliford-and-patrons-choice-awards", template: "news-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Congratulations to TAS members Vivienne and Jocelyn.<br/><br/>The Nancy Culliford Prize was awarded to Vivienne Boland for her Reaching for the Sun and Patron's Choice to Jocelyn Hunt with Abstract Flowers.", extras: [
+                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "The Nancy Culliford Prize was awarded to Vivienne Boland for her Reaching for the Sun and Patron's Choice to Jocelyn Hunt with Abstract Flowers."),
+            ], images: [
+                Image.new(url: "uploads/news/photos_3.jpg"),
             ]),
-            Page.new(name: "Second News Item", slug: "second-news-item", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true, extras: [
-                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Here is a quick blurb to describe the news item"),
+            Page.new(name: "Exhibition: Oil & Water", slug: "gallery-news-november-2012", template: "news-columns-4-8", rank: 200, is_enabled: true, is_navigable: true, body: "Congratulations to Ros Cranch and Marie-Therese Gould for a great exhibition with 9 sales and a good opening night. We have one last exhibition for come for the year with the Childrens' Art Exhibition, official opening day is Saturday 24th November at 10am. Do come along and support the children, it is a lot of fun with Santa and face painting and seeing all the lovely children and the work that they make during the year. Prepare to be inspired!<br/><br/>Exhibition Proposal forms are still available on the lectern in the gallery. November 28th is the final day for accepting proposals, just pop it under the office door or post. As this is my last gallery news I would like to thanks Charlie Boyle for his hangman skills, dedication and guidance in my role as Gallery Co-Ordinator, Diana Battle for her hard work and enthusiasm and ideas as Publicity Officer and lastly but mostly all the lovely members that have had exhibitions at the Toowoomba Art Society during the past 2 years.", extras: [
+                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Congratulations to Ros Cranch and Marie-Therese Gould for a great exhibition!"),
+            ], images: [
+                Image.new(url: "uploads/news/SANY0001.JPG"),
             ]),
-            Page.new(name: "Third News Item", slug: "third-news-item", template: "columns-4-8", rank: 300, is_enabled: true, is_navigable: true, extras: [
-                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Here is a quick blurb to describe the news item"),
+            Page.new(name: "Catherine Ketton wins 2012 Fred Gardiner Award", slug: "catherine-ketton-wins-2012-fred-gardiner-award", template: "news-columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "Our congratulations to Catherine, Jo and Lyn.<br/><br/>Catherine Ketton was awarded the Fred Gardiner Award for Best Picture for her painting Morning Shower.  Equal Runners-Up were Lyn Watts with Magpie Theatre and Jo Smith with La Mama:Olive Tree.  Diana Battle won People's Choice for Natures Canopy on Margaret St.<br/><br/>'FRED GARDINER SELECTION' 2012 MEMBERS' EXHIBITION (part 1)  Ergon Energy Flower, Food and Wine tent in Queens Part for the 3 days during the Carnival of flowers.", extras: [
+                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Catherine Ketton was awarded the Fred Gardiner Award for Best Picture for her painting Morning Shower.  Equal Runners-Up were Lyn Watts with Magpie Theatre and Jo Smith with La Mama:Olive Tree.  Diana Battle won People's Choice for Natures Canopy on Margaret St."),
+            ], images: [
+                Image.new(url: "uploads/news/SANY0329.JPG"),
             ]),
+            Page.new(name: "TAS Bus Trip to Prado Exhibition ", slug: "tas-bus-trip-to-prado-exhibition", template: "news-columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "21 people filled the bus and enjoyed a beautiful day in Brisbane. Temperature was ideal for dining outdoors - warm but not hot and of low humidity, and there was a delightful breeze along the river. The guide who led us through the Prado Exhibition was knowledgeable, most entertaining and helped all who attended to understand and appreciate the works on display. I would like to thank both Peggy and Margaret; Peggy for keeping track of the money so efficiently and Margaret for her role in finalising the booking and dealing with the gallery staff. With no spare seats the trip was a success all round. All who attended reported a very interesting and satisfying day.  ", extras: [
+                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "21 people filled the bus and enjoyed a beautiful day in Brisbane. Temperature was ideal for dining outdoors - warm but not hot and of low humidity, and there was a delightful breeze along the river."),
+            ], images: [
+                Image.new(url: "uploads/news/SANY0037.JPG"),
+            ]),
+            Page.new(name: "Joan Kennedy - Feature Artist", slug: "joan-kennedy-feature-artist", template: "news-columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "From larger floral acrylics to smaller botanical works in watercolour, Joan has put together a wonderful display of her work.", extras: [
+                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Corridor display by Joan Kennedy"),
+            ], images: [
+                Image.new(url: "uploads/news/joankennedy.jpg"),
+            ]),
+            Page.new(name: "Youth Exhibition", slug: "youth-exhibition", template: "news-columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "Fun was had by all that attended the official opening on Saturday morning the 25th of November.<br/><br/>Many parents and friends enjoyed the morning tea while viewing the many paintings on display.<br/><br/>Childrens art classes resume with the school term in 2013.", extras: [
+                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Fun was had by all who attended the official opening on Saturday morning the 25th of November"),
+            ], images: [
+                Image.new(url: "uploads/news/childrens.jpg"),
+            ]),
+
+            # Page.new(name: "", slug: "", template: "columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "", extras: [
+            #     Extra.new(name: "Blurb", slug: "blurb", type: "string", value: ""),
+            # ], images: [
+            #     Image.new(url: "uploads/news/SANY0037.JPG"),
+            # ]),
+
         ]),
         Page.new(name: "Special Events", slug: "special-events", template: "columns-4-8", rank: 300, is_enabled: true, is_navigable: true),
     ]),

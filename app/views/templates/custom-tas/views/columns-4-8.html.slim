@@ -9,9 +9,19 @@
         h2 = @page.name
         = raw(@page.body)
 
-      /.span4.side-menu.pull-right
-      /  - for page in @root_page.pages
-      /    a.side-menu-item href="#{ page.slug }" = page.name
+      .span4.side-menu.pull-right
+        / .feature-content
+        /   - news = @site.pages.where(:slug => 'news').first
+        /   - news_and_events = news.pages.where(:slug => 'current-news').first
+        /   - for item in news_and_events.pages.sample(4)
+
+        /     a.item.clearfix href="#{ root_url + '' + news.slug + "/" + news_and_events.slug + "/" + item.slug }"
+        /       .caption 
+        /         = item.name
+        /       .img-wrapper
+        /         img src="#{ root_url + '/' + item.images.first().url if item.images.size > 0}"
+        /       .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+        /       .action Read more >
 
 
 

@@ -1,0 +1,30 @@
+
+.inside-page
+
+  .container
+    .row
+
+      .span8.main
+
+        h2 = @page.name
+        .img-wrapper
+          img src="#{ root_url + '/' + @page.images.first().url if @page.images.size > 0}"
+        = raw(@page.body)
+
+      .span3.side-menu.pull-right
+        .feature-content
+          - news = @site.pages.where(:slug => 'news').first
+          - news_and_events = news.pages.where(:slug => 'current-news').first
+          - for item in news_and_events.pages.sample(3)
+
+            a.item.clearfix href="#{ root_url + '' + news.slug + "/" + news_and_events.slug + "/" + item.slug }"
+              .caption 
+                = item.name
+              .img-wrapper
+                img src="#{ root_url + '/' + item.images.first().url if item.images.size > 0}"
+              .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+              .action Read more >
+
+
+
+

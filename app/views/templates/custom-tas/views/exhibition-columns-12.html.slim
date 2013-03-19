@@ -1,0 +1,41 @@
+
+.inside-page
+
+  .container
+    .row
+
+      .span12.main
+        h2 
+          | Exhibitions
+          a.category href="exhibitions/current" Current & Upcoming
+          | &nbsp;/&nbsp;
+          a.category href="exhibitions/past" Past
+
+
+        .feature-content
+          .container
+            .row
+            
+              - exhibition = @site.pages.where(:slug => 'exhibitions').first             
+
+              .span4
+                - for item in exhibition.pages.sort_by { |m| m.extras.where(slug: 'start-date').first.value }
+
+                    a.item.clearfix href="#{ root_url + '' + exhibition.slug + "/" + item.slug }" 
+                    
+                      .caption 
+                        = item.name
+                      .by 
+                        = item.extras.where(slug: 'by').first().value if item.extras.where(slug: 'by').first
+
+                      .img-wrapper
+                        img src="#{ root_url + '' + item.images.first().url if item.images.size > 0}"
+
+                      .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+
+                      h4 Show Dates
+                      .date = DateTime.parse(item.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).strftime("%B")    if item.extras.where(slug: 'start-date').first
+                      
+                    
+                      h4 Official Opening
+                      .date = DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first

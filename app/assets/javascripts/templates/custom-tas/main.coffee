@@ -78,78 +78,35 @@ create_inline_lists = ->
 
 
 
-create_projects_sorter = ->
+create_item_sorter = ->
 
-  projects_per_row = 3
-  project_width   = $(".goodline-projects-project").first().width() + 20
-  project_height  = $(".goodline-projects-project").first().height() + 20
+  items_per_row = 3
+  item_width   = $(".relative > .absolute").first().width() + 20
+  item_height  = $(".relative > .absolute").first().height() + 20
 
+  items = $(".relative > .absolute")
 
-  # Set the first category option as the active option
-  $(".categories").find(".category").first().addClass "active"
-  current_category = $(".categories").find(".active").html()
+  current_left = 0
+  current_top = 0
+  item_count = 0
+  row_count = 0
 
+  for item in items 
 
-  # Hide all the projects so we can fade them in nicely, this only happens after load
-  $(".goodline-projects-project").hide()
+    item_count = item_count + 1
+    row_count = row_count + 1
 
+    if row_count > items_per_row
+      current_left = 0
+      row_count = 0
 
-  sort_visible_projects = (category) ->
+    if item_count > items_per_row
+      control_item = items[item_count - items_per_row]
+      current_top = $(control_item).position().top + $(control_item).height() + 50
 
-    current_left    = 0
-    current_top     = 0
-    project_count   = 1
+    $(item).css { left: current_left, top: current_top }
+    current_left = current_left + $(item).width() + 20
 
-    # Set the height of the projects container
-    $(".goodline-projects").css { height: ($(".goodline-projects-project").length / projects_per_row) * project_height + 150 }
-
-    # Grab all the projects and set their current position
-
-    visible_projects = $(".goodline-projects-project").find('.type:contains("' + category + '")')
-    visible_projects = $(".goodline-projects-project").find('.type') if category == "All"
-
-    visible_projects.each ->
-      $(this).parent(".goodline-projects-project").addClass "current-category"
-      $(this).fadeIn "fast"
-
-    # Hide projects without the right class
-    $(".goodline-projects-project").not('.current-category').each ->
-      $(this).fadeOut "fast"
-
-
-    visible_projects.each ->
-
-      project = $(this).parent(".goodline-projects-project")
-
-      project.animate { left: current_left, top: current_top }
-
-      # Set the new left and top values
-      current_left += project_width
-
-      if project_count % projects_per_row == 0
-        current_left = 0
-        current_top += project_height
-
-      project.fadeIn "fast"
-
-      project_count = ++project_count
-
-
-
-
-  sort_visible_projects(current_category)
-
-  # Set up the interactions so we can sort the projects
-  $(".categories").find(".category").off "click"
-  $(".categories").find(".category").on "click", (e) ->
-
-    # Remove the active class from other categories
-    $(".categories").find(".category").removeClass "active"
-    $(this).addClass "active"
-
-    # Remove the current category class
-    $(".goodline-projects-project").removeClass "current-category"
-    sort_visible_projects($(e.currentTarget).html())
 
 
 
@@ -163,75 +120,18 @@ show_active_links = ->
 
 
 
-show_random_page_banner = ->
-
-  random = Math.round(Math.random() * ($(".page-banner").find("img").length - 1))
-  console.log random
-  $(".page-banner").find("img").hide()
-  $(".page-banner").find("img").eq(random).show()
-
-
-
-create_infocus_scroller = ->
-
-  projects = $(".homepage-infocus").find(".row")
-  projects.first().show()
-
-
-  # Create interactions for the arrows
-  projects.find(".arrow-left, .arrow-right").off "mouseenter"
-  projects.find(".arrow-left, .arrow-right").on "mouseenter", ->
-    $(this).addClass "hover"
-
-  projects.find(".arrow-left, .arrow-right").off "mouseleave"
-  projects.find(".arrow-left, .arrow-right").on "mouseleave", ->
-    $(this).removeClass "hover"
-
-
-
-  projects.find(".arrow-right").off "click"
-  projects.find(".arrow-right").on "click", (e) ->
-    $(this).closest(".row").fadeOut "fast", ->
-
-      next_project_length = $(this).closest(".row").next().length
-      if next_project_length > 0
-        next_project = $(this).closest(".row").next()
-      else
-        next_project = projects.first()
-
-      next_project.fadeIn "fast"
-
-
-  projects.find(".arrow-left").off "click"
-  projects.find(".arrow-left").on "click", (e) ->
-    $(this).closest(".row").fadeOut "fast", ->
-
-      prev_project_length = $(this).closest(".row").prev().length
-      if prev_project_length > 0
-        prev_project = $(this).closest(".row").prev()
-      else
-        prev_project = projects.last()
-
-      prev_project.fadeIn "fast"
-
 
 
 
 jQuery ->
 
-
   # Kick off the homepage fader
   create_and_run_carousel()
 
-  # Set up in focus projects on homepage
-  create_infocus_scroller()
-
-  # Add some styling to 'pipe' separated lists
-  create_inline_lists()
-
 
   # Set up the category sorter on the projects page
-  create_projects_sorter()
+  # $(window).load ->
+  #   create_item_sorter()
 
 
   # Make sure image sizes on the homepage are right in browsers that don't support 100% width like Chrome does.
@@ -242,4 +142,3 @@ jQuery ->
   # Add an active class to any links that match the window url
   show_active_links()
 
-  show_random_page_banner()

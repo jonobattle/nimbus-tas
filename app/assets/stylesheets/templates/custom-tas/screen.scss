@@ -1,4 +1,6 @@
 
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
+
 $pink: #D80351;
 $blue: #00A3EE;
 $yellow: #F5D908;
@@ -17,11 +19,11 @@ $yellow: #F5D908;
     float: left;
 
     .banner {
-      font-family: "helvetica neue";
+      font-family: 'Merriweather Sans', sans-serif;
       color: #333;
-      font-size: 50px;
-      padding: 0px 0 0px 455px;
-      line-height: 47px;
+      font-size: 48px;
+      padding: 4px 0 0px 455px;
+      line-height: 48px;
       float: left;
       .dot {
         color: $pink;
@@ -174,13 +176,13 @@ $yellow: #F5D908;
   // FADER
   .homepage-fader {
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     background: #fff;
     height: 300px;
     overflow: hidden;
     position: relative;
 
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 
     .item {
       top:  240px;
@@ -206,75 +208,23 @@ $yellow: #F5D908;
 
   // FEATURES
 
+  .lower-half {
+    border-top: 1px solid #ddd;
+    background-color: #f0f0f0;
+    margin-top: 0px;
+  }
+
   .homepage-feature-wrapper {
     //background: url("grey-gradient.png") bottom left repeat-x;
 
     .homepage-feature {
       padding-bottom: 20px;
 
-      .feature-heading {
-        font-size: 25px;
-        //text-transform: uppercase;
-        color: #333;
-        padding: 0;
-        margin-top: 10px;
-        border-bottom: 1px solid #333;
-        padding-bottom: 10px;
-        //font-family: 'Shadows Into Light Two', cursive;
-        margin-bottom: 10px;
-      }
-
-      .feature-content {
-        margin-top: 0px;
-
-        .item {
-          padding: 10px 10px 10px 0px;
-          display: block;
-          height: 70px;
-
-          font-weight: bold;
-          color: #333 !important;
-          border-bottom: 1px dashed #ddd;
-
-          .img-wrapper {
-            float: left;
-            height: 60px;
-            width: 60px;
-            border: 1px solid #ccc;
-            margin-right: 10px;
-            background-color: #f9f9f9;
-            margin-top: 2px;
-          }
-
-          &:last-child {
-            border-bottom: none;
-          }
-
-          .blurb {
-            line-height: 1.7;
-            color: #555 !important;
-            font-weight: normal;
-
-          }
-
-          &:hover {
-
-            color: $pink !important;
-            text-decoration: none;
-            cursor: pointer;
-
-            .blurb {
-              color: #555;
-            }
-          }
-
-        }
-
-      }
-
     }
 
   }
+
+
 
 
 
@@ -324,12 +274,132 @@ $yellow: #F5D908;
 
   // TEMPLATES ************************************
 
+ .feature-heading {
+      font-size: 25px;
+      //text-transform: uppercase;
+      color: #000;
+      font-weight: bold;
+      padding: 0;
+      margin-top: 5px;
+      //font-family: 'Shadows Into Light Two', cursive;
+      margin-bottom: 15px;
+      font-family: 'Merriweather Sans', sans-serif;
+      // background-color: #eee;
+      padding: 10px 0px 0px;
+      line-height: 35px;
+      
+    }
+
+    .feature-content {
+      margin-top: 0px;
+
+      .now-showing {
+        background-color: $pink;
+        color: white;
+        padding: 5px 10px;
+        border: 1px solid $pink;
+        margin-bottom: 10px;
+        box-shadow: 0 5px 5px #ccc;
+        font-size: 12px;
+      }
+
+      .item {
+
+
+        padding: 10px 10px 15px;
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        color: #333 !important;
+        background-color: #f9f9f9;
+        margin-bottom: 20px;
+        outline: 1px solid #ddd;
+        box-shadow: 0 5px 5px #ccc;
+
+
+        .action {
+          font-size: 12px;
+          margin-top: 10px;
+        }
+
+        .caption {
+          // min-height: 40px;
+          
+        }
+
+        .by {
+          font-weight: normal;
+          color: #666;
+        }
+
+        .img-wrapper {
+          margin: 10px 0;
+          position: relative;
+
+          img {
+            width: 280px;
+          }
+        }
+
+        // &:last-child {
+        //   border-bottom: none;
+        // }
+
+        .blurb {
+          line-height: 1.7;
+          font-size: 12px;
+          color: #555;
+          font-weight: normal;
+
+          &.coming-soon {
+            text-align: center;
+            padding-top: 5px;
+          }
+
+        }
+
+
+        h4 {
+          color: #666;
+          font-size: 11px;
+          background-color: #eee;
+          padding: 3px 5px;
+          text-transform: uppercase;
+        }
+
+        .date {
+          text-align: center;
+        }
+
+        &:hover {
+
+          color: $pink !important;
+          text-decoration: none;
+          cursor: pointer;
+          outline: 1px solid #aaa;
+
+          .date {
+            color: $pink !important;
+          }
+
+          .blurb {
+            color: #000;
+          }        
+
+        }
+
+      }
+
+    }
+
   // COLUMNS-4-8 **********************************
 
 
   .side-menu {
 
-    margin-top: 15px;
+    margin-top: 25px;
+    background-color: #f0f0f0;
+    padding: 25px;
 
     .side-menu-item {
       float: right;
@@ -363,19 +433,19 @@ $yellow: #F5D908;
 
 
   .main {
-    padding-top: 0 !important;
-    padding-bottom: 100px;
-    min-height: 500px;
+    padding-top: 15px !important;
+    
     color: #333;
-
+    line-height: 1.6;
+    
     h2 {
       font-weight: 200;
-      border-bottom: 1px solid #333;
+      // border-bottom: 1px solid #333;
       font-size: 36px;
       display: block !important;
       padding: 10px 0;
       margin: 0;
-      padding-bottom: 10px;
+      padding-bottom:0px;
       margin-bottom: 20px;
 
     }
@@ -396,8 +466,22 @@ $yellow: #F5D908;
 
     }
 
+
+    .img-wrapper {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+      overflow: hidden;
+ 
+      img {
+        width: 100%;
+      }
+
+    }
+
     p {
-      line-height: 1.6;
+
+      
 
       .inline-list {
 
@@ -579,8 +663,20 @@ $yellow: #F5D908;
 
   }
 
+  .relative {
 
-  // GOODLINE PROJECT
+    position: relative;
+
+    .absolute {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+
+  }
+
 
 
 }
+
