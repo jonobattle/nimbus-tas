@@ -49,8 +49,8 @@ class PagesController < ApplicationController
     if @site
 
       @root_page = @site.pages.where(:slug => params[:page_slug]).first
-      @page = @root_page.pages.where(:slug => params[:sub_page_slug]).first
-      @sub_page = @page.pages.where(:slug => params[:sub_sub_page_slug]).first
+      @parent_page = @root_page.pages.where(:slug => params[:sub_page_slug]).first
+      @page = @parent_page.pages.where(:slug => params[:sub_sub_page_slug]).first
 
       render :template => "templates/custom-tas/views/" + @page.template.to_s
 

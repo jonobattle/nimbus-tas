@@ -1,0 +1,76 @@
+
+.inside-page
+
+  .container
+    .row
+
+      .span12.main
+        h2 Current News
+          
+        .feature-content
+          .container
+            .row
+            
+              - news = @site.pages.where(:slug => 'news').first
+              - current_news = news.pages.where(:slug => 'current-news').first             
+              - first_array = []
+              - second_array = []
+              - third_array = []
+
+              - current_item = 1
+
+              - items = current_news.pages
+
+              - until items.empty?
+
+                - item = items.shift
+
+                - if current_item == 1
+                  - first_array << item
+
+                - if current_item == 2
+                  - second_array << item
+
+                - if current_item == 3
+                  - third_array << item
+
+                - current_item = current_item + 1
+                - if current_item > 3
+                  - current_item = 1
+
+
+
+              .span4
+                - for item in first_array
+
+                  a.item.clearfix href="#{ root_url + "" + news.slug + "/" + current_news.slug + "/" + item.slug }"
+                    .caption 
+                      = item.name
+                    .img-wrapper
+                      img src="#{ root_url + "" + item.images.first().url if item.images.size > 0}"
+                    .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+                    .action Read more >
+
+
+              .span4
+                - for item in second_array
+
+                  a.item.clearfix href="#{ root_url + "" + news.slug + "/" + current_news.slug + "/" + item.slug }"
+                    .caption 
+                      = item.name
+                    .img-wrapper
+                      img src="#{ root_url + "" + item.images.first().url if item.images.size > 0}"
+                    .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+                    .action Read more >
+
+              .span4
+                - for item in third_array
+
+                    a.item.clearfix href="#{ root_url + "" + news.slug + "/" + current_news.slug + "/" + item.slug }"
+                      .caption 
+                        = item.name
+                      .img-wrapper
+                        img src="#{ root_url + "" + item.images.first().url if item.images.size > 0}"
+                      .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+                      .action Read more >
+                    

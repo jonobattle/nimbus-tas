@@ -7,11 +7,17 @@
       .span8.main
 
         h2 = @page.name
-        .img-wrapper.half
-          img src="#{ root_url + '/' + @page.images.first().url if @page.images.size > 0}"
-        = raw(@page.body)
 
-      .span3.side-menu.pull-right
+        .container
+          .row
+            .span4
+              = raw(@page.body)
+            .span4
+              .img-wrapper
+                img src="#{ root_url + '/' + @page.images.first().url if @page.images.size > 0}"
+              
+
+      .span4.side-menu.pull-right
         .feature-content
           - exhibition = @site.pages.where(:slug => 'exhibitions').first
           - for item in exhibition.pages.limit(4).sort_by { |m| m.extras.where(slug: 'start-date').first.value }

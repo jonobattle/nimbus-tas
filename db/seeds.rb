@@ -9,14 +9,15 @@
 
 Site.create(name: "Toowoomba Art Society", pages: [
     Page.new(name: "About Us", slug: "about-us", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: false, pages: [
-        Page.new(name: "History of the Toowoomba Art Society", slug: "history", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "
-            <h3>Early days of the Toowoomba Art Society</h3><p>Sometime before November 1925 a group of women had met and discussed the idea of forming an Art Club.  The Art Club membership changed continually, it seems, with people's work demanding they travel or, especially for the women, marriages.  The women gathered at Miss Aebi's studio were the wives of businessmen, a doctor and single women like Miss Aebi, who taught piano or worked in other businesses.  No doubt a few were older, single women who were heavily involved in the community through Red Cross, the Country Women's Association and their church. But younger women were involved from the beginning.  
+        Page.new(name: "History of the Toowoomba Art Society", slug: "history", template: "columns-12", rank: 100, is_enabled: true, is_navigable: true, body: "
+            <h3>Early days of the Toowoomba Art Society</h3><img class='pull-right' src='/uploads/news/gallery.jpg'><p>Sometime before November 1925 a group of women had met and discussed the idea of forming an Art Club.  The Art Club membership changed continually, it seems, with people's work demanding they travel or, especially for the women, marriages.  The women gathered at Miss Aebi's studio were the wives of businessmen, a doctor and single women like Miss Aebi, who taught piano or worked in other businesses.  No doubt a few were older, single women who were heavily involved in the community through Red Cross, the Country Women's Association and their church. But younger women were involved from the beginning.  
             The first meeting of the Toowoomba Art Club, held at Miss Aebi's Studio in Russell Street was attended by - Mrs Brown, Mrs James, Mrs Oehlman and Miss Aebi.  Excused were Mrs D Horn, Mrs Leamon and Misses A and M Stewart.
             At the former meeting in the presence of Miss Aebi, Mrs Brown, Mrs D Horn, Miss E Jones, the Misses Ethel and Eileen Priest, M and A Stewart, Miss Warren the subject of forming an Art Club in Toowoomba was the subject of discussion, and Miss Aebi was charged with convoking, on a convenient date, another meeting at which the matter would be further discussed.</p>
             <p>The meeting,  Miss Aebi in the Chair, thought it necessary to proceed with the election of a preliminary committee, consisting of a president, vice-president, hon. Secretary, treasurer and hon. Instructor with the task to organise the project.  Of those present only Miss Aebi and Mrs James were ready to take office; the former accepting the temporary charge of hon. Instructor, and the latter of temporary president.   The meeting decided to ask Miss Eileen Priest to accept the charge of temporary secretary, Miss E Jones as treasurer pro-tem & A Stewart as temp. vice-president.  Miss Aebi offered her studio free of charge for the purpose of the club; an offer which was accepted in an amended form, to the effect that the club would defray the cost of lighting, hiring of chairs, & other incidental expenses connected with the meetings.  It was further agreed to ask a prominent  Toowoomba gentleman to accept the position of Patron of the Club, with a view to obtain his advice with regards to exhibitions and other matters of public interest.  Miss Aebi communicated the following names as prospective Club members:- Miss Aebi; Mrs Brown; Mrs Horn; Mrs James; Miss Jones; Miss Kanowski; Miss McCulloch; Mrs Leamon; Mrs Oehlman; Misses Ethel & EileenPriest. Misses A & M Stewart; Miss Warren; Miss Turner; Master W Dickson and Jim Jordan, and proposed that Mr and Mrs Lister should be invited to join.</p>
             <p>It was proposed and carried unanimously that a draft of rules, discussed at the first meeting and given by Miss Priest should be typed and amended and submitted to each of the prospective members to peruse, and, if so disposed, to make amendments which should be finally discussed & to witness their consent to become foundation members.  The draft should be signed by prospective members, and then returned to one of the temporary committee members.</p>
             <p>The question of deferring the foundation of the club until after the New Year was then raised and discussed, and it was decided to proceed without delay, so that the New Year should see the Club organised for work.  To this end it was proposed to call a meeting for Wednesday, November 11th, when all those who intended to become foundation members should appear to finally arrange the organisation of the club, by accepting the rules drafted in their amended form.  After this date the distinction of becoming a foundation member should be withdrawn and new members would be registered as active members on paying an entrance of 5/- beside the annual fee.  Such members admission should be made by open ballot in the next meeting of the club.</p>
-            "),
+            "),     
+
         Page.new(name: "Committee Members", slug: "committee-members", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
         Page.new(name: "Hours of Opening", slug: "hours-of-opening", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
         Page.new(name: "Annual Subscription Rates", slug: "annual-subscription-rates", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true)
@@ -84,7 +85,11 @@ Site.create(name: "Toowoomba Art Society", pages: [
             Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "14:00:00"),
 
         ], images: [
-            Image.new(url: "uploads/news/gallery.jpg"),
+            Image.new(url: "uploads/exhibition/thebigleap/Janice &amp_ Sabine web.jpg"),
+            Image.new(url: "uploads/exhibition/thebigleap/Janice Absent Madonna.jpg"),
+            Image.new(url: "uploads/exhibition/thebigleap/Janice's The Sleeping Garden.jpg"),
+            Image.new(url: "uploads/exhibition/thebigleap/Sabine's dog.jpg"),
+            Image.new(url: "uploads/exhibition/thebigleap/Sabine's primulas.jpg"),
         ]),   
 
         Page.new(name: "Paint and Spatter", slug: "oil-water", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould. A Japanese pictorial from Roslyn's trip to Japan and a kaleidoscope of images from Marie-Therese's artistic ideas.Monday-Sunday 10am-2pm, Thursday 10am-1pm, Admission is free", extras: [
@@ -186,9 +191,9 @@ Site.create(name: "Toowoomba Art Society", pages: [
         ]),   
 
     ]),
-    Page.new(name: "News", slug: "news", template: "columns-4-8", rank: 300, is_enabled: true, is_navigable: false, pages: [
+    Page.new(name: "News", slug: "news", template: "news-columns-12", rank: 300, is_enabled: true, is_navigable: false, pages: [
         Page.new(name: "Monthly Newsletter", slug: "monthly-newsletter", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Current News", slug: "current-news", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true, pages: [
+        Page.new(name: "Current News", slug: "current-news", template: "news-columns-12", rank: 200, is_enabled: true, is_navigable: true, pages: [
             Page.new(name: "Nancy Culliford and Patrons' Choice Awards", slug: "nancy-culliford-and-patrons-choice-awards", template: "news-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Congratulations to TAS members Vivienne and Jocelyn.<br/><br/>The Nancy Culliford Prize was awarded to Vivienne Boland for her Reaching for the Sun and Patron's Choice to Jocelyn Hunt with Abstract Flowers.", extras: [
                 Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "The Nancy Culliford Prize was awarded to Vivienne Boland for her Reaching for the Sun and Patron's Choice to Jocelyn Hunt with Abstract Flowers."),
             ], images: [

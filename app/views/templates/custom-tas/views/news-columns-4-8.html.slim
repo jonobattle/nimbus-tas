@@ -11,7 +11,7 @@
           img src="#{ root_url + '/' + @page.images.first().url if @page.images.size > 0}"
         = raw(@page.body)
 
-      .span3.side-menu.pull-right
+      .span4.side-menu.pull-right
         .feature-content
           - news = @site.pages.where(:slug => 'news').first
           - news_and_events = news.pages.where(:slug => 'current-news').first
