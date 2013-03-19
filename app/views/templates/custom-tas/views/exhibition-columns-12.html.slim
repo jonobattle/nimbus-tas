@@ -5,21 +5,43 @@
     .row
 
       .span12.main
-        h2 
-          | Exhibitions
-          a.category href="exhibitions/current" Current & Upcoming
-          | &nbsp;/&nbsp;
-          a.category href="exhibitions/past" Past
-
-
+        h2 Exhibitions
+          
         .feature-content
           .container
             .row
             
               - exhibition = @site.pages.where(:slug => 'exhibitions').first             
+              - first_array = []
+              - second_array = []
+              - third_array = []
+
+              - current_item = 1
+
+              - items = exhibition.pages.sort_by { |m| m.extras.where(slug: 'start-date').first.value }
+
+              - until items.empty?
+
+                - item = items.shift
+
+                - if (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
+                  - if current_item == 1
+                    - first_array << item
+
+                  - if current_item == 2
+                    - second_array << item
+
+                  - if current_item == 3
+                    - third_array << item
+
+                  - current_item = current_item + 1
+                  - if current_item > 3
+                    - current_item = 1
+
+
 
               .span4
-                - for item in exhibition.pages.sort_by { |m| m.extras.where(slug: 'start-date').first.value }
+                - for item in first_array
 
                     a.item.clearfix href="#{ root_url + '' + exhibition.slug + "/" + item.slug }" 
                     
@@ -39,3 +61,49 @@
                     
                       h4 Official Opening
                       .date = DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first
+
+
+              .span4
+                - for item in second_array
+
+                    a.item.clearfix href="#{ root_url + '' + exhibition.slug + "/" + item.slug }" 
+                    
+                      .caption 
+                        = item.name
+                      .by 
+                        = item.extras.where(slug: 'by').first().value if item.extras.where(slug: 'by').first
+
+                      .img-wrapper
+                        img src="#{ root_url + '' + item.images.first().url if item.images.size > 0}"
+
+                      .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+
+                      h4 Show Dates
+                      .date = DateTime.parse(item.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).strftime("%B")    if item.extras.where(slug: 'start-date').first
+                      
+                    
+                      h4 Official Opening
+                      .date = DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first
+
+
+              .span4
+                - for item in third_array
+
+                    a.item.clearfix href="#{ root_url + '' + exhibition.slug + "/" + item.slug }" 
+                    
+                      .caption 
+                        = item.name
+                      .by 
+                        = item.extras.where(slug: 'by').first().value if item.extras.where(slug: 'by').first
+
+                      .img-wrapper
+                        img src="#{ root_url + '' + item.images.first().url if item.images.size > 0}"
+
+                      .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+
+                      h4 Show Dates
+                      .date = DateTime.parse(item.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).strftime("%B")    if item.extras.where(slug: 'start-date').first
+                      
+                    
+                      h4 Official Opening
+                      .date = DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first                      

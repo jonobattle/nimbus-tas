@@ -7,7 +7,7 @@
       .span8.main
 
         h2 = @page.name
-        .img-wrapper
+        .img-wrapper.half
           img src="#{ root_url + '/' + @page.images.first().url if @page.images.size > 0}"
         = raw(@page.body)
 
@@ -23,7 +23,7 @@
               .now-showing Coming Soon
               - coming_soon_count = 1
 
-            a.item.clearfix href="#{ root_url + '' + exhibition.slug + "/" + exhibition.slug + "/" + item.slug }" 
+            a.item.clearfix href="#{ root_url + '' + exhibition.slug + "/" + item.slug }" 
             
               .caption 
                 = item.name

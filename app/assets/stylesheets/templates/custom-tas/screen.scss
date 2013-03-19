@@ -468,8 +468,15 @@ $yellow: #F5D908;
 
 
     .img-wrapper {
-      padding: 10px;
-      border: 1px solid #ccc;
+      
+      &.half {
+        float: left;
+        margin-right: 15px;
+        border: 1px solid #ccc;
+        padding: 5px;
+        width: 50%;
+      }
+
       margin-bottom: 5px;
       overflow: hidden;
  
