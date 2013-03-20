@@ -11,7 +11,21 @@
         .container
           .row
             .span4
+              h4 = @page.name
+              .by 
+                | By 
+                = @page.extras.where(slug: 'by').first().value if @page.extras.where(slug: 'by').first
+
+              br
               = raw(@page.body)
+
+              h5 Show Dates
+              .date = DateTime.parse(@page.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(@page.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(@page.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(@page.extras.where(slug: 'finish-date').first.value).strftime("%B")    if @page.extras.where(slug: 'start-date').first
+
+              h5 Official Opening
+              .date = DateTime.parse(@page.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(@page.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(@page.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if @page.extras.where(slug: 'official-opening-date').first
+
+
             .span4
               .img-wrapper
                 img src="#{ root_url + '/' + @page.images.first().url if @page.images.size > 0}"
