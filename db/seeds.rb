@@ -238,12 +238,17 @@ Site.create(name: "Toowoomba Art Society", pages: [
         Page.new(name: "Weekly Schedule", slug: "weekly-schedule", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
         Page.new(name: "Printmakers Schedule", slug: "printmakers-schedule", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true)
     ]),
-    Page.new(name: "Artists Gallery", slug: "artists-gallery", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
-    Page.new(name: "Childrens Art", slug: "childrens-art", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: false, pages: [
-        Page.new(name: "Gallery", slug: "gallery", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true),
-        Page.new(name: "Activities Schedule", slug: "activities-schedule", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true)
+    Page.new(name: "Artists Gallery", slug: "artists-gallery", template: "columns-12", rank: 100, is_enabled: true, is_navigable: true, body: "Artists gallery coming very soon..."),
+    Page.new(name: "Childrens Art", slug: "childrens-art", template: "childrens-columns-4-8", rank: 100, is_enabled: true, is_navigable: false, pages: [
+        Page.new(name: "Childrens Gallery", slug: "gallery", template: "columns-12", rank: 200, is_enabled: true, is_navigable: true, body: "Childrens art gallery coming soon..."),
+        Page.new(name: "Childrens Activities Schedule", slug: "activities-schedule", template: "childrens-activities-columns-12", rank: 200, is_enabled: true, is_navigable: true)
+    ], images: [
+        Image.new(url: "uploads/exhibition/childrens/TAS01.jpg"),
+        Image.new(url: "uploads/exhibition/childrens/TAS02.jpg"),
+        Image.new(url: "uploads/exhibition/childrens/tas03.jpg"),
+        Image.new(url: "uploads/exhibition/childrens/tas04.jpg"),
     ]),
-    Page.new(name: "Contact Us", slug: "contact-us", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true)
+    Page.new(name: "Contact Us", slug: "contact-us", template: "contact-columns-4-8", rank: 100, is_enabled: true, is_navigable: true)
 ])
 
 

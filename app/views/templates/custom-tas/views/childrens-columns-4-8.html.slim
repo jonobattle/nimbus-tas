@@ -1,0 +1,42 @@
+
+.inside-page
+
+  .container
+    .row
+
+      .span8.main
+
+        h2 = @page.name
+        
+        p Toowoomba Art Society provides term based weekly art classes for Highschool and Primary Students.  Weekday and Saturday classes available. 
+        p The classes focus of teaching a wide variety of techniques and disciplines: Ceramics, textiles, sculpture, drawing, painting, mixed media and printmaking.  Students have the ability to exhibit in end of year annual exhibition and compete in local youth art competitions.  
+        p Class Cost $10 per class with a term materials fee (never more than $20 varies on tasks for the term).Family discounts $9 per student for 2 or more enrollments. All materials supplied.
+
+        p 
+            a href="#{ root_url + 'childrens-art/activities-schedule'}" Click here to view our Activities Schedule
+
+        br
+
+        h3 About the Teachers        
+        h4.clearfix Alex Stalling
+        p 
+            a href='http://www.alexstalling.com' www.alexstalling.com
+        p Artist and curator Alex creates a challenging and fun learning environment.  With knowledge across a wide range of medias and styles Alex encourages students to refine their own individual style will encouraging experimentation of different mediums.  Since gradutating with a Bachelor of Visual Arts (Honours), Alex has held numerous workshops co-insiding with her exhibitions, she has over 6 years experience teaching students from as young as 3 years through to adult.  Through TAS workshops she hopes to create energetic and fun learning environments for her students.
+        
+      
+        br
+        h4.clearfix Mark Phillips
+        p Digital media artist Mark brings his knowledge and experience of new media work coupled with his traditional technical abilities to each class. 
+        p Since graduating from USQ with a Bachelor of Visual Arts (Honours) and a Diploma of Education Mark blends together his artistic practices with a knowledge of diverse learning styles, creating fun and enjoyable classes for all ages.
+
+
+      .span4.side-menu.pull-right
+        .feature-content
+            - for image in @page.images
+
+                .img-wrapper
+                    img src="#{ root_url + '/' + image.url }"
+
+
+
+
