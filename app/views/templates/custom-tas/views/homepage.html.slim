@@ -68,7 +68,7 @@
                 
               
                 h4 Official Opening
-                .date = DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first
+                .date =  DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%A") + ", " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first
 
       .span4.homepage-feature
         .feature-heading Activities

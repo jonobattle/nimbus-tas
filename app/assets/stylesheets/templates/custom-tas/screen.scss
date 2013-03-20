@@ -483,14 +483,29 @@ $yellow: #F5D908;
 
     .img-wrapper {
 
-
-      
       img {
         width: 100%;
       }
 
       margin-bottom: 15px;
 
+    }
+
+    .icon {
+      float: left;
+      width: 50px;
+      margin-top: 10px;
+    }
+
+    .download {
+      float: left;
+      line-height: 50px;
+      margin-left: 15px;
+    }
+
+    .activity-header, .activity-day {
+      color: $pink;
+      font-weight: bold;
     }
 
     p {

@@ -18,9 +18,9 @@ Site.create(name: "Toowoomba Art Society", pages: [
             <p>The question of deferring the foundation of the club until after the New Year was then raised and discussed, and it was decided to proceed without delay, so that the New Year should see the Club organised for work.  To this end it was proposed to call a meeting for Wednesday, November 11th, when all those who intended to become foundation members should appear to finally arrange the organisation of the club, by accepting the rules drafted in their amended form.  After this date the distinction of becoming a foundation member should be withdrawn and new members would be registered as active members on paying an entrance of 5/- beside the annual fee.  Such members admission should be made by open ballot in the next meeting of the club.</p>
             "),     
 
-        Page.new(name: "Committee Members", slug: "committee-members", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Hours of Opening", slug: "hours-of-opening", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Annual Subscription Rates", slug: "annual-subscription-rates", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true)
+        Page.new(name: "Committee Members", slug: "committee-members", template: "committee-columns-12", rank: 100, is_enabled: true, is_navigable: true),
+        Page.new(name: "Hours of Opening", slug: "hours-of-opening", template: "hours-columns-12", rank: 100, is_enabled: true, is_navigable: true),
+        Page.new(name: "Annual Subscription Rates", slug: "annual-subscription-rates", template: "columns-12", rank: 100, is_enabled: true, is_navigable: true, body: "Coming soon...")
     ]),
     Page.new(name: "Exhibitions", slug: "exhibitions", template: "exhibition-columns-12", rank: 400, is_enabled: true, is_navigable: false, pages: [
 
@@ -53,12 +53,12 @@ Site.create(name: "Toowoomba Art Society", pages: [
 
 
         Page.new(name: "The Spaces In Between", slug: "the-spaces-in-between", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Three very accomplished artists from Tenterfield and Stanthorpe interpreting the one concept in very different ways in drawings, paintings, sculptures, textiles and mixed media.", extras: [
-            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Feature artist in our corridor space is Joan Kennedy."),
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Feature artist in our corridor space is Lee Perinet."),
             Extra.new(name: "By", slug: "by", type: "string", value: "Margaret Oban Dowe, Maggie Brockie and Sue Jurd"),
             Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-02-25"),
             Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-03-23"),
-            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-02-25"),
-            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "10:00:00"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-03-03"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "11:00:00"),
 
         ], images: [
             Image.new(url: "uploads/exhibition/Maggie_possum.bmp"),
@@ -76,20 +76,35 @@ Site.create(name: "Toowoomba Art Society", pages: [
             Image.new(url: "uploads/news/gallery.jpg"),
         ]),   
 
+
+        Page.new(name: "Books 'n' Prints", slug: "books-n-prints", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Unique and original artists' books and prints by the Creative Artists' Books and Saturday Printmakers Groups.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Unique and original artists' books and prints by the Creative Artists' Books and Saturday Printmakers Groups."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Creative Artists' Books and Saturday Printmakers Groups"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-05-20"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-06-22"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-05-25"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "14:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/news/gallery.jpg"),
+        ]),   
+
         Page.new(name: "The Big Leap", slug: "the-big-leap", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Two artists who have very different approaches to making art but who share the enthusiasm, fun and joy that the 'doing' provides", extras: [
             Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Two artists who have very different approaches to making art but who share the enthusiasm, fun and joy that the 'doing' provides."),
             Extra.new(name: "By", slug: "by", type: "string", value: "Sabine Kehoe and Janice Gleeson"),
             Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-03-25"),
             Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-04-20"),
-            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-04-01"),
-            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "14:00:00"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-03-28"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "17:30:00"),
+
+            Extra.new(name: "The Big Leap Invitation", slug: "the-big-leap-invitation", type: "download", value: "Download the Invitation", url: "uploads/exhibition/the-big-leap-invite.jpg"),
 
         ], images: [
             Image.new(url: "uploads/exhibition/thebigleap/Janice &amp_ Sabine web.jpg"),
             Image.new(url: "uploads/exhibition/thebigleap/Janice Absent Madonna.jpg"),
             Image.new(url: "uploads/exhibition/thebigleap/Janice's The Sleeping Garden.jpg"),
-            Image.new(url: "uploads/exhibition/thebigleap/Sabine's dog.jpg"),
-            Image.new(url: "uploads/exhibition/thebigleap/Sabine's primulas.jpg"),
+            # Image.new(url: "uploads/exhibition/thebigleap/Sabine's dog.jpg"),
+            # Image.new(url: "uploads/exhibition/thebigleap/Sabine's primulas.jpg"),
         ]),   
 
         Page.new(name: "Paint and Spatter", slug: "oil-water", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould. A Japanese pictorial from Roslyn's trip to Japan and a kaleidoscope of images from Marie-Therese's artistic ideas.Monday-Sunday 10am-2pm, Thursday 10am-1pm, Admission is free", extras: [
@@ -192,7 +207,16 @@ Site.create(name: "Toowoomba Art Society", pages: [
 
     ]),
     Page.new(name: "News", slug: "news", template: "news-columns-12", rank: 300, is_enabled: true, is_navigable: false, pages: [
-        Page.new(name: "Monthly Newsletter", slug: "monthly-newsletter", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
+        Page.new(name: "Monthly Newsletter", slug: "monthly-newsletter", template: "newsletters-columns-12", rank: 100, is_enabled: true, is_navigable: true, extras: [
+
+            Extra.new(name: "March Newsletter 2013", slug: "march-newsletter-2013", type: "newsletter", value: "Here is the March newsletter", url: "uploads/newsletters/March Newsletter.pdf"),
+            Extra.new(name: "February Newsletter 2013", slug: "february-newsletter-2013", type: "newsletter", value: "Here is the February newsletter", url: ""),
+            Extra.new(name: "January Newsletter 2013", slug: "january-newsletter-2013", type: "newsletter", value: "Here is the January newsletter", url: ""),
+            
+            
+
+
+        ]),
         Page.new(name: "Current News", slug: "current-news", template: "news-columns-12", rank: 200, is_enabled: true, is_navigable: true, pages: [
             Page.new(name: "Nancy Culliford and Patrons' Choice Awards", slug: "nancy-culliford-and-patrons-choice-awards", template: "news-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Congratulations to TAS members Vivienne and Jocelyn.<br/><br/>The Nancy Culliford Prize was awarded to Vivienne Boland for her Reaching for the Sun and Patron's Choice to Jocelyn Hunt with Abstract Flowers.", extras: [
                 Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "The Nancy Culliford Prize was awarded to Vivienne Boland for her Reaching for the Sun and Patron's Choice to Jocelyn Hunt with Abstract Flowers."),
@@ -232,11 +256,11 @@ Site.create(name: "Toowoomba Art Society", pages: [
             # ]),
 
         ]),
-        Page.new(name: "Special Events", slug: "special-events", template: "columns-4-8", rank: 300, is_enabled: true, is_navigable: true),
+        Page.new(name: "Special Events", slug: "special-events", template: "columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "Coming Soon..."),
     ]),
     Page.new(name: "Weekly Activities", slug: "weekly-activities", template: "columns-4-8", rank: 400, is_enabled: true, is_navigable: false, pages: [
-        Page.new(name: "Weekly Schedule", slug: "weekly-schedule", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Printmakers Schedule", slug: "printmakers-schedule", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true)
+        Page.new(name: "Weekly Schedule", slug: "weekly-schedule", template: "weekly-schedule-columns-12.html", rank: 100, is_enabled: true, is_navigable: true),
+        Page.new(name: "Printmakers Schedule", slug: "printmakers-schedule", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true, body: "Coming Soon...")
     ]),
     Page.new(name: "Artists Gallery", slug: "artists-gallery", template: "columns-12", rank: 100, is_enabled: true, is_navigable: true, body: "Artists gallery coming very soon..."),
     Page.new(name: "Childrens Art", slug: "childrens-art", template: "childrens-columns-4-8", rank: 100, is_enabled: true, is_navigable: false, pages: [
