@@ -22,6 +22,9 @@ Site.create(name: "Toowoomba Art Society", pages: [
         Page.new(name: "Hours of Opening", slug: "hours-of-opening", template: "hours-columns-12", rank: 100, is_enabled: true, is_navigable: true),
         Page.new(name: "Annual Subscription Rates", slug: "annual-subscription-rates", template: "columns-12", rank: 100, is_enabled: true, is_navigable: true, body: "Coming soon...")
     ]),
+    
+    Page.new(name: "Past Exhibitions", slug: "past-exhibitions", template: "past-exhibition-columns-12", rank: 400, is_enabled: true, is_navigable: false),
+
     Page.new(name: "Exhibitions", slug: "exhibitions", template: "exhibition-columns-12", rank: 400, is_enabled: true, is_navigable: false, pages: [
 
         # Page.new(name: "Information", slug: "information", template: "columns-4-8", rank: 100, is_enabled: true, is_navigable: true),
@@ -89,7 +92,7 @@ Site.create(name: "Toowoomba Art Society", pages: [
             Image.new(url: "uploads/news/gallery.jpg"),
         ]),   
 
-        Page.new(name: "The Big Leap", slug: "the-big-leap", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Two artists who have very different approaches to making art but who share the enthusiasm, fun and joy that the 'doing' provides", extras: [
+        Page.new(name: "The Big Leap", slug: "the-big-leap", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Two artists who have very different approaches to making art but who share the enthusiasm, fun and joy that the 'doing' provides.<br/></br><strong>Janice Gleeson's Artist Statement</strong><br/>Originally a Novocastrian, now a Toowoomba resident of twenty plus years, my interest in art has been lifelong. Professionally I'm a nurse but my real passion lies with the visual. My husband would agree that my art/painting is an indulgence. I don't always understand what I'm doing, but I know my paintings give me something when they work (i.e. talk back) and I find much enjoyment when I observe them talking to each other on the wall. P.S. I have not had any illegal drugs today or for many decades. This body of work begins with 'why did the chicken cross the road?' -using the cross as a beginning form.<br/><br/><strong>Sabine Kehoe's Artist statement</strong><br/>Sabine grew up in Germany. She enjoyed painting as a child but did not venture further until later in life. At 20 she completed her apprenticeship to become a professional photographer; at 24 she completed her study for her main profession of Physiotherapy and at 28 added a commercial pilot license to her repertoire. 3 years ago Sabine started her journey at the Toowoomba Art Society with a few paints and a canvas. She sees herself at the beginning of a journey, where she discovers more and more every time she puts a pencil or paintbrush into her hand. Sabine loves to paint using diverse techniques, all different kinds of mediums and different materials. This Exhibition is her first. It displays her love for colour, texture, light and shade and the story telling in a painting.<br/>Painting has now become an important and exciting part of Sabine's life.", extras: [
             Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Two artists who have very different approaches to making art but who share the enthusiasm, fun and joy that the 'doing' provides."),
             Extra.new(name: "By", slug: "by", type: "string", value: "Sabine Kehoe and Janice Gleeson"),
             Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-03-25"),
@@ -155,17 +158,17 @@ Site.create(name: "Toowoomba Art Society", pages: [
             Image.new(url: "uploads/exhibition/My_Beach.jpg"),
         ]),        
 
-        Page.new(name: "Printmakers Workshop", slug: "printmakers-workshop", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "NEXT PRINT WORKSHOP ... Fri and Sat Nov 2nd and 3rd ... approx 10am to 2 pm. Held in Studio 1 ... 'HOW TO MONOTYPE PRINT' using Watercolours. There will be a demonstration showing what materials to use and how to use them. Students will learn all of the techniques and also how to use the printing press. For more information and what to bring along, please phone Sandra on 0412 438 696.", extras: [
-            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "HOW TO MONOTYPE PRINT using Watercolours."),
-            Extra.new(name: "By", slug: "by", type: "string", value: ""),
-            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2012-11-02"),
-            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2012-11-03"),
-            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2012-11-02"),
-            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "10:00:00"),
+        # Page.new(name: "Printmakers Workshop", slug: "printmakers-workshop", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "NEXT PRINT WORKSHOP ... Fri and Sat Nov 2nd and 3rd ... approx 10am to 2 pm. Held in Studio 1 ... 'HOW TO MONOTYPE PRINT' using Watercolours. There will be a demonstration showing what materials to use and how to use them. Students will learn all of the techniques and also how to use the printing press. For more information and what to bring along, please phone Sandra on 0412 438 696.", extras: [
+        #     Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "HOW TO MONOTYPE PRINT using Watercolours."),
+        #     Extra.new(name: "By", slug: "by", type: "string", value: ""),
+        #     Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2012-11-02"),
+        #     Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2012-11-03"),
+        #     Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2012-11-02"),
+        #     Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "10:00:00"),
 
-        ], images: [
-            Image.new(url: "uploads/exhibition/SANY0202.JPG"),
-        ]),        
+        # ], images: [
+        #     Image.new(url: "uploads/exhibition/SANY0202.JPG"),
+        # ]),        
 
         Page.new(name: "Oil & Water", slug: "oil-water", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould. A Japanese pictorial from Roslyn's trip to Japan and a kaleidoscope of images from Marie-Therese's artistic ideas.Monday-Sunday 10am-2pm, Thursday 10am-1pm, Admission is free", extras: [
             Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould"),
@@ -209,15 +212,20 @@ Site.create(name: "Toowoomba Art Society", pages: [
     Page.new(name: "News", slug: "news", template: "news-columns-12", rank: 300, is_enabled: true, is_navigable: false, pages: [
         Page.new(name: "Monthly Newsletter", slug: "monthly-newsletter", template: "newsletters-columns-12", rank: 100, is_enabled: true, is_navigable: true, extras: [
 
-            Extra.new(name: "March Newsletter 2013", slug: "march-newsletter-2013", type: "newsletter", value: "Here is the March newsletter", url: "uploads/newsletters/March Newsletter.pdf"),
-            Extra.new(name: "February Newsletter 2013", slug: "february-newsletter-2013", type: "newsletter", value: "Here is the February newsletter", url: ""),
-            Extra.new(name: "January Newsletter 2013", slug: "january-newsletter-2013", type: "newsletter", value: "Here is the January newsletter", url: ""),
+            Extra.new(name: "March Newsletter 2013", slug: "march-newsletter-2013", type: "newsletter", value: "Here is the March newsletter", url: "uploads/newsletters/march-newsletter-2013.pdf"),
+            Extra.new(name: "February Newsletter 2013", slug: "february-newsletter-2013", type: "newsletter", value: "Here is the February newsletter", url: "uploads/newsletters/february-newsletter.pdf"),
+            
             
             
 
 
         ]),
         Page.new(name: "Current News", slug: "current-news", template: "news-columns-12", rank: 200, is_enabled: true, is_navigable: true, pages: [
+            Page.new(name: "TAS Bus Trip to Prado Exhibition ", slug: "tas-bus-trip-to-prado-exhibition", template: "news-columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "21 people filled the bus and enjoyed a beautiful day in Brisbane. Temperature was ideal for dining outdoors - warm but not hot and of low humidity, and there was a delightful breeze along the river. The guide who led us through the Prado Exhibition was knowledgeable, most entertaining and helped all who attended to understand and appreciate the works on display. I would like to thank both Peggy and Margaret; Peggy for keeping track of the money so efficiently and Margaret for her role in finalising the booking and dealing with the gallery staff. With no spare seats the trip was a success all round. All who attended reported a very interesting and satisfying day.  ", extras: [
+                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "21 people filled the bus and enjoyed a beautiful day in Brisbane. Temperature was ideal for dining outdoors - warm but not hot and of low humidity, and there was a delightful breeze along the river."),
+            ], images: [
+                Image.new(url: "uploads/news/SANY0037.JPG"),
+            ]),
             Page.new(name: "Nancy Culliford and Patrons' Choice Awards", slug: "nancy-culliford-and-patrons-choice-awards", template: "news-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Congratulations to TAS members Vivienne and Jocelyn.<br/><br/>The Nancy Culliford Prize was awarded to Vivienne Boland for her Reaching for the Sun and Patron's Choice to Jocelyn Hunt with Abstract Flowers.", extras: [
                 Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "The Nancy Culliford Prize was awarded to Vivienne Boland for her Reaching for the Sun and Patron's Choice to Jocelyn Hunt with Abstract Flowers."),
             ], images: [
@@ -232,11 +240,6 @@ Site.create(name: "Toowoomba Art Society", pages: [
                 Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Catherine Ketton was awarded the Fred Gardiner Award for Best Picture for her painting Morning Shower.  Equal Runners-Up were Lyn Watts with Magpie Theatre and Jo Smith with La Mama:Olive Tree.  Diana Battle won People's Choice for Natures Canopy on Margaret St."),
             ], images: [
                 Image.new(url: "uploads/news/SANY0329.JPG"),
-            ]),
-            Page.new(name: "TAS Bus Trip to Prado Exhibition ", slug: "tas-bus-trip-to-prado-exhibition", template: "news-columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "21 people filled the bus and enjoyed a beautiful day in Brisbane. Temperature was ideal for dining outdoors - warm but not hot and of low humidity, and there was a delightful breeze along the river. The guide who led us through the Prado Exhibition was knowledgeable, most entertaining and helped all who attended to understand and appreciate the works on display. I would like to thank both Peggy and Margaret; Peggy for keeping track of the money so efficiently and Margaret for her role in finalising the booking and dealing with the gallery staff. With no spare seats the trip was a success all round. All who attended reported a very interesting and satisfying day.  ", extras: [
-                Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "21 people filled the bus and enjoyed a beautiful day in Brisbane. Temperature was ideal for dining outdoors - warm but not hot and of low humidity, and there was a delightful breeze along the river."),
-            ], images: [
-                Image.new(url: "uploads/news/SANY0037.JPG"),
             ]),
             Page.new(name: "Joan Kennedy - Feature Artist", slug: "joan-kennedy-feature-artist", template: "news-columns-4-8", rank: 300, is_enabled: true, is_navigable: true, body: "From larger floral acrylics to smaller botanical works in watercolour, Joan has put together a wonderful display of her work.", extras: [
                 Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Corridor display by Joan Kennedy"),
@@ -260,7 +263,7 @@ Site.create(name: "Toowoomba Art Society", pages: [
     ]),
     Page.new(name: "Weekly Activities", slug: "weekly-activities", template: "columns-4-8", rank: 400, is_enabled: true, is_navigable: false, pages: [
         Page.new(name: "Weekly Schedule", slug: "weekly-schedule", template: "weekly-schedule-columns-12.html", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Printmakers Schedule", slug: "printmakers-schedule", template: "columns-4-8", rank: 200, is_enabled: true, is_navigable: true, body: "Coming Soon...")
+        Page.new(name: "Printmakers Workshop Schedule", slug: "printmakers-schedule", template: "printmakers-columns-4-8", rank: 200, is_enabled: true, is_navigable: true, body: "Coming Soon...")
     ]),
     Page.new(name: "Artists Gallery", slug: "artists-gallery", template: "columns-12", rank: 100, is_enabled: true, is_navigable: true, body: "Artists gallery coming very soon..."),
     Page.new(name: "Childrens Art", slug: "childrens-art", template: "childrens-columns-4-8", rank: 100, is_enabled: true, is_navigable: false, pages: [

@@ -6,11 +6,9 @@
 
       .span12.main
         h2 
-          | Exhibitions &nbsp;&nbsp;
-          a.small-heading-link href='past-exhibitions' View Past Exhibitions
+          | Past Exhibitions &nbsp;&nbsp;
+          a.small-heading-link href='exhibitions' View Current & Upcoming Exhibitions
         
-
-
           
         .feature-content
           .container
@@ -29,7 +27,7 @@
 
                 - item = items.shift
 
-                - if (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
+                - if (Date.today > DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
                   - if current_item == 1
                     - first_array << item
 
