@@ -48,7 +48,7 @@
                       = item.name
                     .img-wrapper
                       img src="#{ root_url + "" + item.images.first().url if item.images.size > 0}"
-                    .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+                    .blurb_small = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
                     .action Read more >
 
 
@@ -60,7 +60,7 @@
                       = item.name
                     .img-wrapper
                       img src="#{ root_url + "" + item.images.first().url if item.images.size > 0}"
-                    .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+                    .blurb_small = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
                     .action Read more >
 
               .span4
@@ -71,6 +71,6 @@
                         = item.name
                       .img-wrapper
                         img src="#{ root_url + "" + item.images.first().url if item.images.size > 0}"
-                      .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+                      .blurb_small = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
                       .action Read more >
                     

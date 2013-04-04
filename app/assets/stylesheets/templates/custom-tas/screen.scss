@@ -371,6 +371,21 @@ $yellow: #F5D908;
 
         }
 
+        .blurb_small {
+          line-height: 1.7;
+          font-size: 12px;
+          color: #555;
+          font-weight: normal;
+          
+          overflow: hidden;
+
+          &.coming-soon {
+            text-align: center;
+            padding-top: 5px;
+          }
+
+        }        
+
 
         h4 {
           color: $pink;
@@ -724,6 +739,39 @@ $yellow: #F5D908;
     color: #999;
   }
 
+  .legend {
+    height: 30px;
+    width: 30px;
+    float: left;
+    margin-right: 15px;
+    background-color: #ccc;
+    font-size: 14px;
+  }
+
+  .one {
+    background-color: lighten(blue, 45%) !important;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    
+  }
+
+  .two {
+    background-color: lighten(yellow, 35%) !important;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    
+  }
+
+  .three {
+    background-color: lighten(red, 45%) !important;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    
+  }
+
+  .ltext {
+    line-height: 30px;
+  }
 
 }
 
