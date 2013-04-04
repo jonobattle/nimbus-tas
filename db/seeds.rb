@@ -20,7 +20,7 @@ Site.create(name: "Toowoomba Art Society", pages: [
 
         Page.new(name: "Committee Members", slug: "committee-members", template: "committee-columns-12", rank: 100, is_enabled: true, is_navigable: true),
         Page.new(name: "Hours of Opening", slug: "hours-of-opening", template: "hours-columns-12", rank: 100, is_enabled: true, is_navigable: true),
-        Page.new(name: "Annual Subscription Rates", slug: "annual-subscription-rates", template: "columns-12", rank: 100, is_enabled: true, is_navigable: true, body: "Coming soon...")
+        Page.new(name: "Annual Subscription Rates", slug: "annual-subscription-rates", template: "rates-columns-12", rank: 100, is_enabled: true, is_navigable: true, body: "")
     ]),
     
     Page.new(name: "Past Exhibitions", slug: "past-exhibitions", template: "past-exhibition-columns-12", rank: 400, is_enabled: true, is_navigable: false),
@@ -52,8 +52,6 @@ Site.create(name: "Toowoomba Art Society", pages: [
         ], images: [
             Image.new(url: "uploads/exhibition/Tree.jpg"),
         ]),   
-
-
 
         Page.new(name: "The Spaces In Between", slug: "the-spaces-in-between", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Three very accomplished artists from Tenterfield and Stanthorpe interpreting the one concept in very different ways in drawings, paintings, sculptures, textiles and mixed media.", extras: [
             Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Feature artist in our corridor space is Lee Perinet."),
@@ -110,8 +108,8 @@ Site.create(name: "Toowoomba Art Society", pages: [
             # Image.new(url: "uploads/exhibition/thebigleap/Sabine's primulas.jpg"),
         ]),   
 
-        Page.new(name: "Paint and Spatter", slug: "oil-water", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould. A Japanese pictorial from Roslyn's trip to Japan and a kaleidoscope of images from Marie-Therese's artistic ideas.Monday-Sunday 10am-2pm, Thursday 10am-1pm, Admission is free", extras: [
-            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "A joint exhibition by Roslyn Cranch and Marie-Therese Gould"),
+        Page.new(name: "Paint and Spatter", slug: "oil-water", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "A group of enthusiastic and energetic artists who use a variety of techniques, mediums and styles to express what they enjoy painting best.", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "A group of enthusiastic and energetic artists who use a variety of techniques, mediums and styles to express what they enjoy painting best."),
             Extra.new(name: "By", slug: "by", type: "string", value: "The Tuesday 'Paint and Spatter' group"),
             Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-10-21"),
             Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-11-16"),

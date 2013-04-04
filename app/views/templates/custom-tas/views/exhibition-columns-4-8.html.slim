@@ -10,7 +10,7 @@
 
         .container
           .row
-            .span4
+            .span8
               h4 = @page.name
               .by 
                 | By 
@@ -19,7 +19,7 @@
               br
               = raw(@page.body)
 
-              h5 Show Dates
+              h5 Exhibition Dates
               .date = DateTime.parse(@page.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(@page.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(@page.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(@page.extras.where(slug: 'finish-date').first.value).strftime("%B")    if @page.extras.where(slug: 'start-date').first
 
               h5 Official Opening
@@ -44,37 +44,37 @@
                   img src="#{ root_url + '/' + image.url }"
                 
 
-      .span4.side-menu.pull-right
-        .feature-content
-          - exhibition = @site.pages.where(:slug => 'exhibitions').first
+      / .span4.side-menu.pull-right
+      /   .feature-content
+      /     - exhibition = @site.pages.where(:slug => 'exhibitions').first
 
-          - items = exhibition.pages.sort_by { |m| m.extras.where(slug: 'start-date').first.value }
+      /     - items = exhibition.pages.sort_by { |m| m.extras.where(slug: 'start-date').first.value }
 
-          - for item in items
+      /     - for item in items
 
-            - if (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
-              - if (Date.today > DateTime.parse(item.extras.where(slug: 'start-date').first.value)) and (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
-                .now-showing Now Showing
+      /       - if (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
+      /         - if (Date.today > DateTime.parse(item.extras.where(slug: 'start-date').first.value)) and (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
+      /           .now-showing Now Showing
 
-              - if (Date.today < DateTime.parse(item.extras.where(slug: 'start-date').first.value)) and coming_soon_count < 1
-                .now-showing Coming Soon
-                - coming_soon_count = 1
+      /         - if (Date.today < DateTime.parse(item.extras.where(slug: 'start-date').first.value)) and coming_soon_count < 1
+      /           .now-showing Coming Soon
+      /           - coming_soon_count = 1
 
-              a.item.clearfix href="#{ root_url + '' + exhibition.slug + "/" + item.slug }" 
+      /         a.item.clearfix href="#{ root_url + '' + exhibition.slug + "/" + item.slug }" 
               
-                .caption 
-                  = item.name
-                .by 
-                  = item.extras.where(slug: 'by').first().value if item.extras.where(slug: 'by').first
+      /           .caption 
+      /             = item.name
+      /           .by 
+      /             = item.extras.where(slug: 'by').first().value if item.extras.where(slug: 'by').first
 
-                .img-wrapper
-                  img src="#{ root_url + '' + item.images.first().url if item.images.size > 0}"
+      /           .img-wrapper
+      /             img src="#{ root_url + '' + item.images.first().url if item.images.size > 0}"
 
-                .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+      /           .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
 
-                h4 Show Dates
-                .date = DateTime.parse(item.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).strftime("%B")    if item.extras.where(slug: 'start-date').first
+      /           h4 Show Dates
+      /           .date = DateTime.parse(item.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).strftime("%B")    if item.extras.where(slug: 'start-date').first
                 
               
-                h4 Official Opening
-                .date = DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%A") + ", " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first
+      /           h4 Official Opening
+      /           .date = DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%A") + ", " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first

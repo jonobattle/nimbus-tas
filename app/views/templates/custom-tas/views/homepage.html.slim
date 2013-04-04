@@ -16,71 +16,89 @@
         img src="/uploads/page-banners/carnival-banner.jpg"
 
 
-.homepage-feature-wrapper.lower-half
-  .container
-    .row
-      .span4.homepage-feature
-        .feature-heading News & Events 
-        .feature-content
-          - news = @site.pages.where(:slug => 'news').first
-          - news_and_events = news.pages.where(:slug => 'current-news').first
-          - for item in news_and_events.pages.limit(4)
+.container
+  .row
+    .span12   
+      h3 Welcome to our website
+      p The Toowoomba Art Society is located in it's own purpose built premisis at 1 Godsall Street, Toowoomba (the last house overlooking the Queens Park and the Botanical Gardens).
+      p Our building includes two studios for groups, classes and workshops as well as Culliford Gallery (the hanging space in gallery One). This space is unique as it is a working studio and gallery in one.
 
-            a.item.clearfix href="#{ news.slug + "/" + news_and_events.slug + "/" + item.slug }"
-              .caption 
-                = item.name
-              .img-wrapper
-                img src="#{item.images.first().url if item.images.size > 0}"
-              .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
-              .action Read more >
+      br
+      h4 All are welcome!
+      p A new exhibition is showing every 3-4 weeks. The Corridor Exhibition is also changed regularly.
+    
+    
+.container
+  .row
+    .span6
+    .span6
 
-      .span4.homepage-feature
-        .feature-heading Exhibitions
-        .feature-content
-          - exhibition = @site.pages.where(:slug => 'exhibitions').first
+
+/ .homepage-feature-wrapper.lower-half
+/   .container
+/     .row
+/       .span4.homepage-feature
+/         .feature-heading News & Events 
+/         .feature-content
+/           - news = @site.pages.where(:slug => 'news').first
+/           - news_and_events = news.pages.where(:slug => 'current-news').first
+/           - for item in news_and_events.pages.limit(4)
+
+/             a.item.clearfix href="#{ news.slug + "/" + news_and_events.slug + "/" + item.slug }"
+/               .caption 
+/                 = item.name
+/               .img-wrapper
+/                 img src="#{item.images.first().url if item.images.size > 0}"
+/               .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+/               .action Read more >
+
+/       .span4.homepage-feature
+/         .feature-heading Exhibitions
+/         .feature-content
+/           - exhibition = @site.pages.where(:slug => 'exhibitions').first
           
-          - items = exhibition.pages.sort_by { |m| m.extras.where(slug: 'start-date').first.value }
+/           - items = exhibition.pages.sort_by { |m| m.extras.where(slug: 'start-date').first.value }
 
-          - for item in items
+/           - for item in items
 
-            - if (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
-              - if (Date.today > DateTime.parse(item.extras.where(slug: 'start-date').first.value)) and (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
-                .now-showing Now Showing
+/             - if (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
+/               - if (Date.today > DateTime.parse(item.extras.where(slug: 'start-date').first.value)) and (Date.today < DateTime.parse(item.extras.where(slug: 'finish-date').first.value))
+/                 .now-showing Now Showing
 
-              - if (Date.today < DateTime.parse(item.extras.where(slug: 'start-date').first.value)) and coming_soon_count < 1
-                .now-showing Coming Soon
-                - coming_soon_count = 1
+/               - if (Date.today < DateTime.parse(item.extras.where(slug: 'start-date').first.value)) and coming_soon_count < 1
+/                 .now-showing Coming Soon
+/                 - coming_soon_count = 1
 
-              a.item.clearfix href="#{ exhibition.slug + "/" + item.slug }" 
+/               a.item.clearfix href="#{ exhibition.slug + "/" + item.slug }" 
               
-                .caption 
-                  = item.name
-                .by 
-                  = item.extras.where(slug: 'by').first().value if item.extras.where(slug: 'by').first
+/                 .caption 
+/                   = item.name
+/                 .by 
+/                   = item.extras.where(slug: 'by').first().value if item.extras.where(slug: 'by').first
 
-                .img-wrapper
-                  img src="#{item.images.first().url if item.images.size > 0}"
+/                 .img-wrapper
+/                   img src="#{item.images.first().url if item.images.size > 0}"
 
-                .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
+/                 .blurb = truncate(raw(item.extras.where(slug: 'blurb').first.value), :ommision => ' ...', :length => 300) if item.extras.where(slug: 'blurb').first
 
-                h4 Show Dates
-                .date = DateTime.parse(item.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).strftime("%B")    if item.extras.where(slug: 'start-date').first
+/                 h4 Show Dates
+/                 .date = DateTime.parse(item.extras.where(slug: 'start-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'start-date').first.value).strftime("%B") + " - " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'finish-date').first.value).strftime("%B")    if item.extras.where(slug: 'start-date').first
                 
               
-                h4 Official Opening
-                .date =  DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%A") + ", " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first
+/                 h4 Official Opening
+/                 .date =  DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%A") + ", " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).day.ordinalize + " " + DateTime.parse(item.extras.where(slug: 'official-opening-date').first.value).strftime("%B")  + " @ " + DateTime.parse(item.extras.where(slug: 'official-opening-time').first.value).strftime("%-I:%M %p") if item.extras.where(slug: 'official-opening-date').first
 
-      .span4.homepage-feature
-        .feature-heading Activities
+/       .span4.homepage-feature
+/         .feature-heading Activities
 
-        .feature-content
-          .item
-            .blurb.coming-soon Actitvities coming soon!
+/         .feature-content
+/           .item
+/             .blurb.coming-soon Actitvities coming soon!
 
 
 
-/.homepage-middle
-/  .container
-/    .row
-/      .span12
+/ /.homepage-middle
+/ /  .container
+/ /    .row
+/ /      .span12
 
