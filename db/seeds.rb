@@ -65,6 +65,24 @@ Site.create(name: "Toowoomba Art Society", pages: [
             Image.new(url: "uploads/exhibition/Maggie_possum.bmp"),
         ]),   
 
+        Page.new(name: "Corridor Exhibition", slug: "corridor-exhibition-lee-perinet", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Corridor Exhibition by Lee Perinet", extras: [
+            Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Corridor Exhibition by Lee Perinet."),
+            Extra.new(name: "By", slug: "by", type: "string", value: "Lee Perinet"),
+            Extra.new(name: "Start Date", slug: "start-date", type: "date", value: "2013-02-25"),
+            Extra.new(name: "Finish Date", slug: "finish-date", type: "date", value: "2013-03-23"),
+            Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-03-03"),
+            Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "11:00:00"),
+
+        ], images: [
+            Image.new(url: "uploads/exhibition/1.jpg"),
+            Image.new(url: "uploads/exhibition/2.jpg"),
+            Image.new(url: "uploads/exhibition/3.jpg"),
+            Image.new(url: "uploads/exhibition/4.jpg"),
+            Image.new(url: "uploads/exhibition/5.jpg"),
+            Image.new(url: "uploads/exhibition/8.jpg"),
+            Image.new(url: "uploads/exhibition/9.jpg"),
+        ]),   
+
         Page.new(name: "Monday All Sorts", slug: "monday-all-sorts", template: "exhibition-columns-4-8", rank: 100, is_enabled: true, is_navigable: true, body: "Works by the Monday Art in Bark Group using bark and various other mediums.", extras: [
             Extra.new(name: "Blurb", slug: "blurb", type: "string", value: "Works by the Monday Art in Bark Group using bark and various other mediums."),
             Extra.new(name: "By", slug: "by", type: "string", value: "Art In Bark Group"),
