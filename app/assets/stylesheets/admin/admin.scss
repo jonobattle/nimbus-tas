@@ -1,4 +1,120 @@
 
+@import url(http://fonts.googleapis.com/css?family=Unica+One);
+
+// Login shroud goes outside the main nimbus admin section because it gets appended to the body before login
+.nimbus-login-shroud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #333; /* Old browsers */
+  opacity: 0.6;
+}
+
+.nimbus-login-controls {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 500px;
+  background-color: #fff;
+  opacity: 1;
+  z-index: 20000;
+  border-radius: 15px;
+
+  .brand {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 22px;
+    color: #999;
+    font-family: 'Unica One', cursive;
+  }
+
+  form {
+
+    margin: 20px;
+    margin-top: 75px;
+
+    label {
+      line-height: 34px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #999;
+      font-weight: bold;
+    }
+
+    input {
+      line-height: 30px;
+      padding: 10px 5px;
+      border: none;
+      outline: none !important;
+      box-shadow: none;
+      border-bottom: 1px solid #eee;
+      border-radius: 0 !important;
+
+      &:focus {
+        outline:0px !important;
+        box-shadow: none;
+      }
+
+    }
+
+    .controls {
+
+      button {
+        margin-top: 10px;
+      }
+
+    }
+
+  }
+
+  .close_login_controls {
+
+    position: relative;
+    float: right;
+    top: 10px;
+    right: 10px;
+    height: 20px;
+    width: 20px;
+    line-height: 16px;
+    text-align: center;
+    color: #aaa;
+    background-color: none;
+    display: block;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 5px;
+
+    &:hover {
+      color: #fff;
+      background-color: #ccc;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+  }
+
+}
+
+
+.nimbus-admin {
+
+
+
+
+
+
+
+
+}
+
+
+
+
 
 
 // Main admin panel as the background for the whole admin page
@@ -93,4 +209,41 @@
   }
 
 
+}
+
+
+
+.message_queue {
+
+  position: fixed;
+
+  right: 0;
+  top: 0;
+  width: 300px;
+
+  z-index: 999999;
+
+  .message {
+
+    float: right;
+    padding: 15px;
+    font-weight: 200;
+    margin-top: -2px;
+    font-size: 18px;
+
+    &.error {
+      background-color: #ff0000;
+      color: #fff;
+      border: 2px solid darken(#ff0000, 2%);
+    }
+
+  }
+
+
+}
+
+
+.nimbus-admin-controls {
+  padding: 10px;
+  background-color: #ddd;
 }
