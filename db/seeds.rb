@@ -158,6 +158,8 @@ Site.create(name: "Toowoomba Art Society", pages: [
             Extra.new(name: "Official Opening Date", slug: "official-opening-date", type: "date", value: "2013-04-26"),
             Extra.new(name: "Official Opening Time", slug: "official-opening-time", type: "date", value: "18:30:00"),
 
+            Extra.new(name: "Drawn From Life Invitation", slug: "drawn-from-life-invitation", type: "download", value: "Download the Invitation", url: "uploads/exhibition/drawn-from-life-invite.pdf"),
+
         ], images: [
             Image.new(url: "uploads/exhibition/Reclining_nude_from__Life_in_the_Raw__2012.jpg"),
         ]),        
